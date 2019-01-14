@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-class TheUsForm extends React.Component {
+class theUsForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {value: ''};
@@ -95,3 +95,4 @@ class TheUsForm extends React.Component {
     }
 
 }
+export default theUsForm;

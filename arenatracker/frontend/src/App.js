@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Router, Route} from "react-router-dom";
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import {ThemeContext, themes} from "./ThemeProvider";
 import Login from "./Views/Login";
 import SignUp from "./Views/SignUp";
@@ -15,14 +15,14 @@ constructor() {
   this.state = {
     user: {},
     form: "",
-    theme: themes.default
+    //theme: themes.default
            
   };
 
   this.toggleTheme = this.toggleTheme.bind(this);
   this.handleFilter = this.handleFilter.bind(this);
-  this.submitForm = this.submitForm.bind(this);
-  this.getForm = this.getForm.bind(this);
+  //this.submitForm = this.submitForm.bind(this);
+  //this.getForm = this.getForm.bind(this);
 
 }
 
@@ -39,11 +39,11 @@ handleFilter(e) {
   })
 }
 
- 
 
 
 render() {
-  const { TheForm, user, filter, theme, Header} = this.state;
+  const { user, filter, theme} = this.state;
+  // {theUsForm, Header}
   const themeChange = {
     theme,
     toggleTheme: this.toggleTheme
