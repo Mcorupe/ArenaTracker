@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Router, Route} from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom'
+//import {Route} from "react-router-dom";
 //import logo from './logo.svg';
 import {ThemeContext, themes} from "./ThemeProvider";
 import Login from "./Views/Login";
@@ -14,14 +15,14 @@ constructor() {
 
   this.state = {
     user: {},
-    form: "",
-    //theme: themes.default
+    form: {},
+    theme: themes.default
            
   };
-
+  
   this.toggleTheme = this.toggleTheme.bind(this);
   this.handleFilter = this.handleFilter.bind(this);
-  //this.submitForm = this.submitForm.bind(this);
+  this.submitForm = this.submitForm.bind(this);
   //this.getForm = this.getForm.bind(this);
 
 }
@@ -39,10 +40,17 @@ handleFilter(e) {
   })
 }
 
+submitForm(e) {
+  const {form} = e.target;
+  this.setState({
+    form: {}
+  })
+}
+
 
 
 render() {
-  const { user, filter, theme} = this.state;
+  const { form, user, filter, theme} = this.state;
   // {theUsForm, Header}
   const themeChange = {
     theme,
@@ -52,7 +60,7 @@ render() {
     <ThemeContext.Provider value={themeChange}>
       <Router>
         <>
-          <Route exact path="/" 
+          <Router exact path="/" 
             render={() => (
               <Home 
                 user={user}
@@ -62,8 +70,8 @@ render() {
               />
             )}
           />
-          <Route exact path="/Login" Component={Login} />
-          <Route exact path="/Signup" Component={SignUp} />
+          <Router exact path="/Login" Component={Login} />
+          <Router exact path="/Signup" Component={SignUp} />
           </>
       </Router>
     </ThemeContext.Provider>

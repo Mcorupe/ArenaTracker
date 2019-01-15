@@ -28,21 +28,23 @@ class theUsForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
             <label>
                 Pick your team comp:
-                <select value={this.state.value} onChange={this.handleChange}>
-                <option value="Cupid Cleave">Cupid Cleave</option> {/*Ret/hunt/x*/}
-                <option value="God Comp">God Comp</option> {/*Spriest/Mage/Rdruid*/}
-                <option value="KFC">KFC</option> {/*war/hunt/x*/}
-                <option value="RMP">RMP</option> {/*rog/mage/priest*/}
-                <option value="LSD">LSD</option> {/*lock/ele/Rdruid*/}
-                <option value="LSD2">LSD2</option> {/*lock/boom/Rsham*/}
-                <option value="OwlPlay">OwlPlay</option> {/*boom/spriest/x*/}
-                <option value="Stormrage">Stormrage</option> {/*DH/boom/Rsham*/}
-                <option value="Shatterplay">Shatterplay </option> {/*Spriest/Mage/x*/}
-                <option value="Thug Cleave">Thug Cleave</option> {/*rog/hunt/x*/}
-                <option value="TSG">TSG</option> {/*DK/War/x*/}
-                <option value="Turbo Cleave">Turbo Cleave</option> {/*Enh/War/x*/}
-                </select>
             </label>
+                <div class="comps">
+                <select value={this.state.value} onChange={this.handleChange}>
+                    <option value="Cupid Cleave">Cupid Cleave</option>  {/*Ret/hunt/x*/}
+                    <option value="God Comp">God Comp</option>          {/*Spriest/Mage/Rdruid*/}
+                    <option value="KFC">KFC</option>                    {/*war/hunt/x*/}
+                    <option value="RMP">RMP</option>                    {/*rog/mage/priest*/}
+                    <option value="LSD">LSD</option>                    {/*lock/ele/Rdruid*/}
+                    <option value="LSD2">LSD2</option>                  {/*lock/boom/Rsham*/}
+                    <option value="OwlPlay">OwlPlay</option>            {/*boom/spriest/x*/}
+                    <option value="Stormrage">Stormrage</option>        {/*DH/boom/Rsham*/}
+                    <option value="Shatterplay">Shatterplay </option>   {/*Spriest/Mage/x*/}
+                    <option value="Thug Cleave">Thug Cleave</option>    {/*rog/hunt/x*/}
+                    <option value="TSG">TSG</option>                    {/*DK/War/x*/}
+                    <option value="Turbo Cleave">Turbo Cleave</option>  {/*Enh/War/x*/}
+                </select>
+                </div>
             <br></br>
             <label>
                 Dps 1:
