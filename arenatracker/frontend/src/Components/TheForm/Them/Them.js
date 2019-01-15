@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-export default class TheThemForm extends React.Component {
+class TheThemForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {value: ''};
@@ -93,3 +93,4 @@ export default class TheThemForm extends React.Component {
     }
 
 }
+export default theThemForm;
