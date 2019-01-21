@@ -1,0 +1,231 @@
+.header {
+    border-radius: 0% !important;
+  }
+  
+  /* App styling */
+  .App {
+    text-align: center;
+    color: #fff;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+  
+  /* theme button */
+  .theme-button {
+    position: relative;
+    left: 15px;
+    top: 15px;
+  }
+  
+  .theme-button:hover {
+    cursor: pointer;
+  }
+  /* ----------------------------------------------------*/
+  /* Default Theme */
+
+  .defaultBackground {
+      background-color: #5C5C5C;
+  }
+
+  .whiteFont {
+    color: #fff;
+  }
+  /* -----------------------------------------------------*/
+
+  /* Alliance Theme */
+  .allyBackground {
+    background-color: #234890;
+  }
+ 
+  .greyBackground {
+    background-color: #5C5C5C;
+    /* background-color: #2049d9; */
+  }
+  .whiteFont {
+    color: #fff;
+  }
+  
+/* ----------------------------------------------------*/
+  
+  /* Horde Theme */
+  .redBackground {
+    background-color: #870A0A;
+  }
+  
+  .greyBackground {
+    background-color: #5C5C5C;
+  }
+  
+  .whiteFont {
+    color: #fff;
+  }
+/* ----------------------------------------------------*/    
+   
+  /* placeholder font */
+  ::placeholder {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f0ead6;
+    opacity: 1;
+  }
+  
+  :-ms-input-placeholder {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f0ead6;
+    opacity: 1;
+  }
+  
+  ::-ms-input-placeholder {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f0ead6;
+    opacity: 1;
+  }
+  
+  .logo {
+    height: 120px;
+    width: 120px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .chirpButton {
+    font-weight: 700;
+    font-size: 20px;
+    height: 40px;
+    width: 120px;
+    border-radius: 2px;
+  }
+  
+  .search {
+    padding: 3px;
+    border-radius: 0px 4px 4px 0px;
+    height: 30px;
+    width: 280px;
+    font-size: 18px;
+  }
+  
+  .profileImage {
+    border-radius: 50%;
+    opacity: 0.75;
+    position: relative;
+    right: 15px;
+    top: 15px;
+  }
+  
+  .alternate-profile-image {
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 10px;
+    opacity: 0.75;
+    height: 100px;
+    width: 100px;
+  }
+  /* 
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .modal-main {
+    position: fixed;
+    width: 80%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .modal-main textarea {
+    margin-bottom: 3%;
+    height: 10em;
+  }
+  .modal-main button {
+    margin-right: 3%;
+    margin-bottom: 3%;
+  }
+  .modalOpen {
+    z-index: 1;
+  } */
+  
+  .display-none {
+    display: none;
+  }
+  
+  .textAreaFont {
+    font-size: 18px;
+  }
+  
+  .searchIcon {
+    padding: 6px;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 4px 0px 0px 4px;
+  }
+  
+  h1 {
+    font-size: 80px;
+    margin: 0px;
+    font-family: "Bowlby One SC", cursive;
+    letter-spacing: 2px;
+  }
+  
+  .headerBottom {
+    margin-top: -15px;
+    margin-bottom: 15px;
+    width: 50%;
+  }
+  
+  /* font */
+  @import url("https://fonts.googleapis.com/css?family=Bowlby+One+SC");
+  
+  /* flexbox */
+  .flexRowAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .flexColumnAround {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  .flexRowBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .flexRowCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* media queries */
+  @media only screen and (min-width: 300px) {
+    .modal-main textarea {
+      width: 60%;
+    }
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .modal-main textarea {
+      height: 10em;
+    }
+  }
+  
+  @media only screen and (min-width: 1000px) {
+    .modal-main textarea {
+      height: 10em;
+    }
+  }

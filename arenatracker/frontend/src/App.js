@@ -41,7 +41,7 @@ handleFilter(e) {
 }
 
 submitForm(e) {
-  const {form} = e.target;
+  //const {form} = e.target;
   this.setState({
     form: {}
   })
@@ -50,8 +50,8 @@ submitForm(e) {
 
 
 render() {
-  const { form, user, filter, theme} = this.state;
-  // {theUsForm, Header}
+  const { user, filter, theme} = this.state;
+  // {theUsForm, Header, form}
   const themeChange = {
     theme,
     toggleTheme: this.toggleTheme
