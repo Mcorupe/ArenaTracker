@@ -20,7 +20,7 @@
     margin-left: 20px;
   } */
   
-  .analytics .topButton {
+  .comps .topButton {
     font-family: 'Arial';
     font-style: normal;
     font-weight: 500;
@@ -32,11 +32,11 @@
     border-bottom: 3px solid transparent;
   }
   
-  .analytics:hover .topButton {
+  .comps:hover .topButton {
     border-bottom: 3px solid #848484;
   }
   
-  .analyticsDropDown {
+  .compsDropDown {
     position: absolute;
     top: 61px;
     left: 228px;
@@ -45,7 +45,7 @@
     border-right: 1px solid #f2f2f2;
   }
   
-  .analyticsDropDown .moduleGroup {
+  .compsDropDown .moduleGroup {
     width: 175px;
     list-style-type: none;
     font-family: 'Arial';

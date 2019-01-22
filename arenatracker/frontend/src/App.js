@@ -8,6 +8,7 @@ import SignUp from "./Views/SignUp";
 import Home from "./Views/Home/Home";
 import './App.css';
 import "./Components/Header/Header.css"
+import { Dropdown } from 'semantic-ui-react';
 
 class App extends Component {
 constructor() {
@@ -56,7 +57,7 @@ render() {
     theme,
     toggleTheme: this.toggleTheme
   };
-  return(
+   return(
     <ThemeContext.Provider value={themeChange}>
       <Router>
         <>
