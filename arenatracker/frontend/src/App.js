@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router} from 'react-router-dom'
 //import {Route} from "react-router-dom";
 //import logo from './logo.svg';
 import {ThemeContext, themes} from "./ThemeProvider";
@@ -8,7 +8,7 @@ import SignUp from "./Views/SignUp";
 import Home from "./Views/Home/Home";
 import './App.css';
 import "./Components/Header/Header.css"
-import { Dropdown } from 'semantic-ui-react';
+//import { Dropdown } from 'semantic-ui-react';
 
 class App extends Component {
 constructor() {
@@ -58,8 +58,9 @@ render() {
     toggleTheme: this.toggleTheme
   };
    return(
+       
     <ThemeContext.Provider value={themeChange}>
-      <Router>
+      <Router> 
         <>
           <Router exact path="/" 
             render={() => (
@@ -73,9 +74,10 @@ render() {
           />
           <Router exact path="/Login" Component={Login} />
           <Router exact path="/Signup" Component={SignUp} />
-          </>
+        </>
       </Router>
-    </ThemeContext.Provider>
+   </ThemeContext.Provider>
+   
     );
   }
 }
