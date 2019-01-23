@@ -7,7 +7,7 @@ import SignUp from "./Views/SignUp";
 import Home from "./Views/Home/Home";
 import './App.css';
 import "./Components/Header/Header.css"
-import "./Components/TheForm/Vs/Vs";
+import  TheVsForm from "./Components/TheForm/Vs/Vs";
 
 class App extends Component {
 constructor() {
@@ -57,8 +57,8 @@ render() {
   //   toggleTheme: this.toggleTheme
   // };
    return(
-     <div className="TheVsForm">
-       
+     <div>
+       <TheVsForm />
      </div>
    );
   }
