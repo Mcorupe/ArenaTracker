@@ -93,4 +93,4 @@ const classSpecModules = [
 	},
 ]
 
-ReactDOM.render(<Menu classSpecModules={classSpecModules} />, document.getElementById('root'));
+ReactDOM.render(<Menu classSpecModules={classSpecModules} />, document.getElementById('Vs'));

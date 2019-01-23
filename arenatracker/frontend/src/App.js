@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router} from 'react-router-dom'
 //import {Route} from "react-router-dom";
-//import logo from './logo.svg';
 import {ThemeContext, themes} from "./ThemeProvider";
 import Login from "./Views/Login";
 import SignUp from "./Views/SignUp";
 import Home from "./Views/Home/Home";
 import './App.css';
 import "./Components/Header/Header.css"
-//import { Dropdown } from 'semantic-ui-react';
+import "./Components/TheForm/Vs/Vs";
 
 class App extends Component {
 constructor() {
@@ -49,37 +48,44 @@ submitForm(e) {
 }
 
 
-
 render() {
-  const { user, filter, theme} = this.state;
-  // {theUsForm, Header, form}
-  const themeChange = {
-    theme,
-    toggleTheme: this.toggleTheme
-  };
+  const { TheVsForm } = this.state;
+  //const { TheVsForm, user, filter, theme} = this.state;
+  // {Header, form}
+  // const themeChange = {
+  //   theme,
+  //   toggleTheme: this.toggleTheme
+  // };
    return(
+     <div className="TheVsForm">
        
-    <ThemeContext.Provider value={themeChange}>
-      <Router> 
-        <>
-          <Router exact path="/" 
-            render={() => (
-              <Home 
-                user={user}
-                filter={filter}
-                handleFilter={this.handleFilter}
-                submitForm={this.submitForm}
-              />
-            )}
-          />
-          <Router exact path="/Login" Component={Login} />
-          <Router exact path="/Signup" Component={SignUp} />
-        </>
-      </Router>
-   </ThemeContext.Provider>
-   
-    );
+     </div>
+   );
   }
 }
 
 export default App;
+
+
+
+ 
+// <ThemeContext.Provider value={themeChange}>
+// <TheVsForm>
+// <Router> 
+//   <>
+//     <Router exact path="/" 
+//       render={() => (
+//         <Home 
+//         user={user}
+//         filter={filter}
+//         handleFilter={this.handleFilter}
+//         submitForm={this.submitForm}
+//         />
+//         )}
+//         />
+//     <Router exact path="/Login" Component={Login} />
+//     <Router exact path="/Signup" Component={SignUp} />
+//   </>
+// </Router>
+// </TheVsForm>   
+// </ThemeContext.Provider>

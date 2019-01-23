@@ -93,4 +93,4 @@ class TheThemForm extends React.Component {
     }
 
 }
-export default theThemForm;
+export default TheThemForm;
