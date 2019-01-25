@@ -1,66 +1,63 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router} from 'react-router-dom'
-//import {Route} from "react-router-dom";
-import {ThemeContext, themes} from "./ThemeProvider";
-import Login from "./Views/Login";
-import SignUp from "./Views/SignUp";
-import Home from "./Views/Home/Home";
 import './App.css';
 import "./Components/Header/Header.css"
-import  TheVsForm from "./Components/TheForm/Vs/Vs";
+import TheVsForm from './Components/TheForm/Vs/Vs';
+import TheUsForm from './Components/TheForm/Us/Us';
+import TheThemForm from './Components/TheForm/Them/Them';
 
 class App extends Component {
-constructor() {
-  super();
+constructor(props) {
+  super(props);
 
   this.state = {
-    user: {},
-    form: {},
-    theme: themes.default
+    value: '',
+    //theme: themes.default
            
   };
   
-  this.toggleTheme = this.toggleTheme.bind(this);
-  this.handleFilter = this.handleFilter.bind(this);
-  this.submitForm = this.submitForm.bind(this);
-  //this.getForm = this.getForm.bind(this);
+  // this.toggleTheme = this.toggleTheme.bind(this);
+  this.handleSubmit = this.handleSubmit.bind(this);
+  this.handleChange = this.handleChange.bind(this);
 
 }
 
-toggleTheme() {
-  this.setState(state => ({
-    theme: state.theme === themes.horde ? themes.ally : themes.default
-  }))
+// toggleTheme() {
+//   this.setState(state => ({
+//     theme: state.theme === themes.horde ? themes.ally : themes.default
+//   }))
+// }
+
+
+handleChange(event) {
+  this.setState({value: event.target.value})
 }
 
-handleFilter(e) {
-  const {value} = e.target;
-  this.setState({
-    filter: value
-  })
-}
-
-submitForm(e) {
-  //const {form} = e.target;
-  this.setState({
-    form: {}
-  })
+handleSubmit(event) {
+  console.log("form value:" + this.state.value)
+  event.preventDefault();
+  
 }
 
 
 render() {
-  const { TheVsForm } = this.state;
-  //const { TheVsForm, user, filter, theme} = this.state;
-  // {Header, form}
-  // const themeChange = {
-  //   theme,
-  //   toggleTheme: this.toggleTheme
-  // };
-   return(
-     <div>
-       <TheVsForm />
-     </div>
-   );
+   return (
+     <div className="App">
+       <TheVsForm onSubmit={this.handleSubmit}>
+       </TheVsForm>
+       <br></br>
+       <br></br>
+       <br></br>
+       <br></br> {/* put the win/loss componenet in here somewhere*/}
+       <br></br>
+       <br></br>
+       <br></br>
+       <TheUsForm onSubmit={this.handleSubmit}>
+       </TheUsForm>
+       <br></br>
+       <TheThemForm onSubmit={this.handleSubmit}>
+       </TheThemForm>
+     </div> 
+    );
   }
 }
 
@@ -77,9 +74,7 @@ export default App;
 //       render={() => (
 //         <Home 
 //         user={user}
-//         filter={filter}
-//         handleFilter={this.handleFilter}
-//         submitForm={this.submitForm}
+//         handleSubmit={this.handleSubmit}
 //         />
 //         )}
 //         />

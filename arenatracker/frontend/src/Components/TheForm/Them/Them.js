@@ -1,96 +1,65 @@
 import React from 'react';
 
 
-
 class TheThemForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {value: ''};
+        this.state = {
+            killTarget: '',
+            ccChain: ''
+        };
+    
+            this.handleChange = this.handleChange.bind(this);
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleChange(e) {
-        this.setState({value: event.target.value});
-    }
-
-    handleSubmit(e) {
-        this.state.value;
-        event.preventDefault();
     }
 
 
-    render(){
-        return(
-            <form onSubmit={this.handleSubmit}>
-            <label>
-                Enemy Team Comp:
-                <select value={this.state.value} onChange={this.handleChange}>
-                <option value="Cupid Cleave">Cupid Cleave</option> {/*Ret/hunt/x*/}
-                <option value="God Comp">God Comp</option> {/*Spriest/Mage/Rdruid*/}
-                <option value="KFC">KFC</option> {/*war/hunt/x*/}
-                <option value="RMP">RMP</option> {/*rog/mage/priest*/}
-                <option value="LSD">LSD</option> {/*lock/ele/Rdruid*/}
-                <option value="LSD2">LSD2</option> {/*lock/boom/Rsham*/}
-                <option value="OwlPlay">OwlPlay</option> {/*boom/spriest/x*/}
-                <option value="Stormrage">Stormrage</option> {/*DH/boom/Rsham*/}
-                <option value="Shatterplay">Shatterplay </option> {/*Spriest/Mage/x*/}
-                <option value="Thug Cleave">Thug Cleave</option> {/*rog/hunt/x*/}
-                <option value="TSG">TSG</option> {/*DK/War/x*/}
-                <option value="Turbo Cleave">Turbo Cleave</option> {/*Enh/War/x*/}
+
+handleChange(event) {
+    this.setState({
+        killTarget: event.target.value1,
+        ccChain: event.target.value3
+     });
+    }
+render(){
+    return(
+        <form onSubmit={this.handleSubmit}>
+        <br></br>
+        <label>THEM</label>
+        <br></br>
+        <br></br>
+        <label>Kill Target</label>
+        <br></br>
+            <div className="killTarget">
+                <select value={this.state.value1} onChange={this.handleChange}>
+                    <option value="Un-Named">---------</option>
+                    <option value="Any">Any</option>
+                    <option value={"Death Knight"}>Death Knight</option>
+                    <option value={"Demon Hunter"}>Demon Hunter</option>
+                    <option value={"Druid"}>Druid</option>
+                    <option value={"Hunter"}>Hunter</option>
+                    <option value={"Mage"}>Mage</option>
+                    <option value={"Monk"}>Monk</option>
+                    <option value={"Paladin"}>Paladin</option>
+                    <option value={"Priest"}>Priest</option>
+                    <option value={"Rogue"}>Rogue</option>
+                    <option value={"Shaman"}>Shaman</option>
+                    <option value={"Warlock"}>Warlock</option>
+                    <option value={"Warrior"}>Warrior</option>
                 </select>
-            </label>
             <br></br>
-            <label>
-                Dps 1:
-                <select value={this.state.value} onChange={this.handleChange}>
-                <option value={"Death Knight"}>Death Knight</option>
-                <option value={"Demon Hunter"}>Demon Hunter</option>
-                <option value={"Druid"}>Druid</option>
-                <option value={"Hunter"}>Hunter</option>
-                <option value={"Mage"}>Mage</option>
-                <option value={"Monk"}>Monk</option>
-                <option value={"Paladin"}>Paladin</option>
-                <option value={"Priest"}>Priest</option>
-                <option value={"Rogue"}>Rogue</option>
-                <option value={"Shaman"}>Shaman</option>
-                <option value={"Warlock"}>Warlock</option>
-                <option value={"Warrior"}>Warrior</option>
+            <label>CC-Chain</label>
+            <div className="ccChain">
+                <select value={this.state.value2} onChange={this.handleChange}>
+                    <option value="placeholder">---------</option>
+                    <option value="placeholder2">coming back to this whole</option> 
+                    <option value="placeholder3">shitshow feature im going to hate later</option>
                 </select>
-            </label>
-            <br></br>
-            <label>
-                Dps 2:
-                <select value={this.state.value} onChange={this.handleChange}>
-                <option value={"Death Knight"}>Death Knight</option>
-                <option value={"Demon Hunter"}>Demon Hunter</option>
-                <option value={"Druid"}>Druid</option>
-                <option value={"Hunter"}>Hunter</option>
-                <option value={"Mage"}>Mage</option>
-                <option value={"Monk"}>Monk</option>
-                <option value={"Paladin"}>Paladin</option>
-                <option value={"Priest"}>Priest</option>
-                <option value={"Rogue"}>Rogue</option>
-                <option value={"Shaman"}>Shaman</option>
-                <option value={"Warlock"}>Warlock</option>
-                <option value={"Warrior"}>Warrior</option>
-                </select>
-            </label>
-            <br></br>
-            <label>
-                Healer:
-                <select value={this.state.value} onChange={this.handleChange}>
-                <option value={"Druid"}>Druid</option>
-                <option value={"Monk"}>Monk</option>
-                <option value={"Paladin"}>Paladin</option>
-                <option value={"Priest"}>Priest</option>
-                <option value={"Shaman"}>Shaman</option>
-                </select>
-            </label>
-            </form>
+            </div>
+            </div>
+        </form>
         )
     }
-
 }
+
 export default TheThemForm;
