@@ -25,7 +25,7 @@ render(){
     return(
         <form onSubmit={this.handleSubmit}>
         <br></br>
-        <label>THEM</label>
+        <label><b>THEM</b></label>
         <br></br>
         <br></br>
         <label>Kill Target</label>

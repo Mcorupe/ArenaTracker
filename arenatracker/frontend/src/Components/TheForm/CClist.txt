@@ -1,0 +1,103 @@
+List of all CC in WoW put into catagories for me to use and get really angry at cuz this is going to be a turd.
+
+
+
+Roots:
+
+Deathknight             Chains of Ice           3 seconds
+Druid                   Entangling Root         8 seconds
+Druid	                Mass Entanglement	    8 seconds
+Hunter	                Charge	                1 second
+Hunter	                Entrapment          	4 seconds
+Hunter(BM/MM)       	Binding Shot        	3 seconds
+Mage	                Freeze              	8 seconds
+Mage	                Frost Nova	            8 seconds
+Monk (Windwalker)	    Disable	                3 seconds
+Shaman	                Earthgrab Totem	        8 seconds
+
+
+Incapacitates: 
+
+Demon Hunter	        Imprison	        3 seconds
+Demon Hunter	        Detainment	        5 seconds
+Druid (Guardian)	    Incapacitating Roar	3 seconds
+Hunter	                Freezing Trap	    8 seconds
+Hunter (BM/MM)	        Wyvern Sting	    6 seconds
+Mage	                Polymorph	        8 seconds
+Mage	                Ring of Frost	    8 seconds
+Monk	                Paralysis	        4 seconds
+Paladin	                Repentance	        8 seconds
+Priest	                Shackle Undead	    8 seconds
+Rogue (Outlaw)	        Gouge	            4 seconds
+Rogue	                Sap	                8 seconds
+Shaman	                Hex	                8 seconds
+Warlock	                Banish	            8 seconds
+Warlock	                Mortal Coil	        3 seconds
+
+
+Disorients:
+
+Death Knight (Frost)	    Blinding Sleet     	4 seconds
+Druid (Resto, Boom, kitty)	Cyclone/ Cyclone	6 seconds
+Hunter (MM)	                Scatter Shot	    4 seconds
+Mage (Fire)	                Dragon's Breath	    4 seconds
+Paladin	                    Blinding Light	    6 seconds
+Priest (Holy)	            Holy Word: Chastise	3 seconds
+Priest	                    Mind Control	    8 seconds
+Priest (Disc, Shadow)	    Psychic Scream	    6 seconds
+Rogue	                    Blind	            8 seconds
+Warlock	                    Fear	            6 seconds
+Warlock (Affliction)	    Howl of Terror	    6 seconds
+Warlock	                    Seduction (Succy)	8 seconds
+Warrior (Arms, Fury)	    Intimidating Shout	6 seconds
+
+
+
+Stuns:
+
+Death Knight (Blood)	    Asphyxiate/ Asphyxiate  	5 seconds
+Death Knight	            Gnaw (Ghoul)	            3 seconds
+Death Knight	            Monstrous Blow while  Dark Transformation is active	2 seconds
+Demon Hunter	            Fel Eruption	            4 seconds
+Demon Hunter	            Chaos Nova	                2 seconds
+Druid (Feral)	            Maim	                    1-5 seconds
+Druid	                    Mighty Bash	                5 seconds
+Druid (Feral)	            Rake (when used from Stealth)	4 seconds
+Hunter (Beast Mastery)	    Intimidation	            3 seconds
+Monk	                    Leg Sweep	                5 seconds
+Paladin	                    Hammer of Justice	        6 seconds
+Rogue	                    Between the Eyes	        1-6 seconds
+Rogue	                    Cheap Shot	                4 seconds
+Rogue (Assa, Sub)	        Kidney Shot	                2-6 seconds
+Elemental Shaman	        Lightning Lasso	            5 seconds
+Shaman (Elemental)	        Pulverize (Primal Earth Elemental)	4 seconds
+Shaman	                    Capacitor Totem         	5 seconds
+Demonology Warlock Pet	    Axe Toss	                4 seconds
+Warlock (Demo, Destro)	    Shadowfury	                4 seconds
+Warlock	                    Summon Infernal	            2 seconds
+Warrior	                    Shockwave	                3 seconds
+Warrior	                    Storm Bolt	                4 seconds
+
+
+Silences:
+
+Death Knight (Blood)	    Strangulate	        5 seconds
+Druid (Balance)	            Solar Beam	        4 seconds
+Paladin (Protection)	    Avenger's Shield	3 seconds
+Priest (Shadow)	            Silence	            5 seconds
+Rogue (Assassination)	    Garrote	            3 seconds
+
+
+Knockbacks:
+
+Death Knight	        Gorefiend's Grasp
+Druid	                Typhoon
+Hunter	                Hi-Explosive Trap
+Hunter (Marksmanship)	Bursting Shot
+Priest	                Shining Force
+Shaman (Elemental)	    Thunderstorm
+Warlock	                Fellash (Shivarra pet)
+Warlock	                Whiplash (Succubus pet)
+
+
+

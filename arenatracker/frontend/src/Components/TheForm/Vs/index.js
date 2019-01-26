@@ -5,6 +5,9 @@ import Menu from './App';
 import './App.css';
 
 
+//so i threw this here cuz i was trying to use some nested-dd for the vs form to start with, not sure how to implement
+//the stuff from /TheForm/ddMenu into the <select> dropdowns
+
 const classSpecModules = [
 	{
 		key: 'Death Knght',

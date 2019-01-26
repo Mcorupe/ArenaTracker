@@ -14,8 +14,6 @@ class TheUsForm extends React.Component {
 
     }
 
-
-
 handleChange(event) {
     this.setState({
         killTarget: event.target.value1,
@@ -27,7 +25,7 @@ render(){
     return(
         <form onSubmit={this.handleSubmit}>
         <br></br>
-        <label>US</label>
+        <label><b>US</b></label>
         <br></br>
         <br></br>
         <label>Kill Target</label>

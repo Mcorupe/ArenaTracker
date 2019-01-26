@@ -53,7 +53,7 @@ class TheVsForm extends React.Component {
         return(
             <form onSubmit={this.handleSubmit}>
             <label>
-                Pick your team comp: 
+                Your team comp: 
             </label>
                 <div className="comps">
                 <select value={this.state.value} onChange={this.handleChange}>
@@ -76,6 +76,7 @@ class TheVsForm extends React.Component {
             <label>
                 Dps 1: 
                 <select value={this.state.value} onChange={this.handleChange}>
+                <option value="Un-Named">------------------</option>
                 <option value={"Death Knight"}>Death Knight</option>
                 <option value={"Demon Hunter"}>Demon Hunter</option>
                 <option value={"Druid"}>Druid</option>
@@ -94,6 +95,7 @@ class TheVsForm extends React.Component {
             <label>
                 Dps 2:
                 <select value={this.state.value} onChange={this.handleChange}>
+                <option value="Un-Named">----------------</option>
                 <option value={"Death Knight"}>Death Knight</option>
                 <option value={"Demon Hunter"}>Demon Hunter</option>
                 <option value={"Druid"}>Druid</option>
@@ -121,9 +123,7 @@ class TheVsForm extends React.Component {
                 </select>
             </label>
             <br></br>
-            <br></br>
-                <label>VS</label>
-            <br></br>
+                <label><b><i>-------------------------------------------VS--------------------------------------------</i></b></label>
             <br></br>
 
             <label>
@@ -150,6 +150,7 @@ class TheVsForm extends React.Component {
             <label>
                 Dps 1:
                 <select value={this.state.value} onChange={this.handleChange}>
+                <option value={"UnNamed"}>-------------------</option>
                 <option value={"Death Knight"}>Death Knight</option>
                 <option value={"Demon Hunter"}>Demon Hunter</option>
                 <option value={"Druid"}>Druid</option>
@@ -168,6 +169,7 @@ class TheVsForm extends React.Component {
             <label>
                 Dps 2:
                 <select value={this.state.value} onChange={this.handleChange}>
+                <option value={"UnNamed"}>-------------------</option>
                 <option value={"Death Knight"}>Death Knight</option>
                 <option value={"Demon Hunter"}>Demon Hunter</option>
                 <option value={"Druid"}>Druid</option>
@@ -194,6 +196,7 @@ class TheVsForm extends React.Component {
                 <option value={"Shaman"}>Shaman</option>
                 </select>
             </label>
+            
             </form>
         )
     }

@@ -4,6 +4,9 @@ import "./Components/Header/Header.css"
 import TheVsForm from './Components/TheForm/Vs/Vs';
 import TheUsForm from './Components/TheForm/Us/Us';
 import TheThemForm from './Components/TheForm/Them/Them';
+import WinLoss from './Components/TheForm/WinLoss/WinLoss';
+import Percentages from './Components/TheForm/Percentages/Percentages';
+import PopularChoice from './Components/TheForm/PopularChoice/PopularChoice';
 
 class App extends Component {
 constructor(props) {
@@ -42,20 +45,25 @@ handleSubmit(event) {
 render() {
    return (
      <div className="App">
-       <TheVsForm onSubmit={this.handleSubmit}>
+      <label>________________________________________________________________________________________</label>
+       <TheVsForm onSubmit={this.handleSubmit}>   {/*do i need this submit?*/}
        </TheVsForm>
-       <br></br>
-       <br></br>
-       <br></br>
-       <br></br> {/* put the win/loss componenet in here somewhere*/}
-       <br></br>
-       <br></br>
-       <br></br>
-       <TheUsForm onSubmit={this.handleSubmit}>
+       <label>________________________________________________________________________________________</label>
+       <WinLoss onSubmit={this.handleSubmit}>    {/*this one i know i'll need?*/}
+       </WinLoss>
+       <label>________________________________________________________________________________________</label>
+       <TheUsForm onSubmit={this.handleSubmit}>     {/*do i need this submit?*/}
        </TheUsForm>
-       <br></br>
-       <TheThemForm onSubmit={this.handleSubmit}>
+      <label>________________________________________________________________________________________</label>
+       <TheThemForm onSubmit={this.handleSubmit}>   {/*do i need this submit?*/}
        </TheThemForm>
+       <label>________________________________________________________________________________________</label>
+       <PopularChoice>
+       </PopularChoice>
+       <label>________________________________________________________________________________________</label>       
+       <br></br>
+       <Percentages>
+       </Percentages>
      </div> 
     );
   }
