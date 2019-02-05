@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-//const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const morgan = require("morgan");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
@@ -43,7 +43,7 @@ const applyMiddleware = app => {
   app.use(passport.initialize());
 
 
-  const DB_NAME = process.env.TEST_SUITE || "chirp";
+  const DB_NAME = process.env.TEST_SUITE || "ArenaTracker";
 
   const LOCAL_URI = `mongodb://localhost:27017/${DB_NAME}`;
   const MONGO_URI =
@@ -52,14 +52,14 @@ const applyMiddleware = app => {
 
 
 
-//  connecting to MongDB
-//   mongoose
-//     .connect(
-//       MONGO_URI,
-//       { dbName: DB_NAME, useNewUrlParser: true }
-//     )
-//     .then(() => console.log("Mongo is Running"))
-//     .catch(err => console.log(err));
+ //connecting to MongDB
+  mongoose
+    .connect(
+      MONGO_URI,
+      { dbName: DB_NAME, useNewUrlParser: true }
+    )
+    .then(() => console.log("Mongo is Running"))
+    .catch(err => console.log(err));
 
 };
 
