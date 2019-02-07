@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import "./Components/Header/Header.css"
-import TheVsForm from './Components/TheForm/Vs/Vs';
+import {TheVsForm3} from './Components/TheForm/Vs';
 import TheUsForm from './Components/TheForm/Us/Us';
 import TheThemForm from './Components/TheForm/Them/Them';
 import WinLoss from './Components/TheForm/WinLoss/WinLoss';
@@ -46,8 +46,8 @@ render() {
    return (
      <div className="App">
       <label>________________________________________________________________________________________</label>
-       <TheVsForm onSubmit={this.handleSubmit}>   {/*do i need this submit?*/}
-       </TheVsForm>
+       <TheVsForm3 onSubmit={this.handleSubmit}>   {/*do i need this submit?*/}
+       </TheVsForm3>
        <label>________________________________________________________________________________________</label>
        <WinLoss onSubmit={this.handleSubmit}>    {/*this one i know i'll need?*/}
        </WinLoss>
