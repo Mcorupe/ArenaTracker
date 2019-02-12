@@ -36,7 +36,7 @@ const classSpecModules = [
 		color: '#40C7EB',
 		modules: [
 			{key: 'Arcane'},
-			{key: 'Fire', value: "Fire Mage"},
+			{key: 'Fire'},
 			{key: 'Frost'}],
 	}, {
 		key: 'Monk',
