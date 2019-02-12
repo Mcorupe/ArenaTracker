@@ -4,7 +4,7 @@ import DropdownMenu , { NestedDropdownMenu } from 'react-dd-menu';
 
 const classSpecModules = [
     {
-		key: 'Death Knght',
+		key: 'Death Knight',
 		color: '#C41F3B',
 		modules: [
 			{key: 'Blood'},
@@ -92,7 +92,7 @@ const classSpecModules = [
 
 
 
-class TheVsForm3 extends React.Component {
+class TheVsForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -102,26 +102,17 @@ class TheVsForm3 extends React.Component {
 
     }
 
-    toggle=() => {
+    toggle = () => {
         this.setState({ isMenuOpen: !this.state.isMenuOpen });
       }
      
-    close=(event)=> {
+    close = (event) => {
         const { target: {value, name}} = event;
         event.preventDefault();
         this.setState({ isMenuOpen: false, [name]: value });
       }
 
-    handleChange=(event)=> {
-        this.setState({
-            //comps: event.target.value,
-            dps1: event.target.value1,
-            dps2: event.target.value2,
-            healer: event.target.value3
-            //value: event.target.value});
-        });
-    }
-
+   
     
 
     render(){
@@ -131,10 +122,10 @@ class TheVsForm3 extends React.Component {
             close: this.close,
             toggle: <button type="button" onClick={this.toggle}>{teamComp}</button>,
             align: 'right'
-        }
+        };
 
         const nestedProps = {
-            toggle: <button href="#">------</button>,
+            toggle: <button type="button" name="nestedDD" onClick={this.toggle}>++++</button>,
             animate: true,
           };
           console.log(this.props)
@@ -146,11 +137,11 @@ class TheVsForm3 extends React.Component {
 				{classSpecModules.map(specs => {
 					return (
                         <>
-						<li> <button onClick={this.close} name="dps1" value={specs.key}>{specs.key}</button> </li>
+						<li> <button onClick={this.close} name="Dps1" value={specs.key}>{specs.key}</button> </li>
                           {specs.modules.map(modules=>{
 							return (
 								<NestedDropdownMenu {...nestedProps}>
-									<li><button onClick={this.close} name="dps1" value={modules.key}>{modules.key}</button></li>
+									<li><button onClick={this.close} name="Dps1" value={modules.key}>{modules.key}</button></li>
 								</NestedDropdownMenu>
 							)
 							})}
@@ -166,4 +157,4 @@ class TheVsForm3 extends React.Component {
 
   
 
-export default TheVsForm3;
+export default TheVsForm;

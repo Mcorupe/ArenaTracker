@@ -3,110 +3,31 @@ import DropdownMenu from 'react-dd-menu';
 import VsRoles from "./VsRoles";
 
 
-const classSpecModules = [
+const teamCompAuto = [
     {
-		key: 'Death Knght',
-		color: '#C41F3B',
+		key: 'Cupid Cleave',
 		modules: [
-			{key: 'Blood'},
-			{key: 'Frost'},
-			{key: 'Unholy'}],
-	}, {
-		key: 'Demon Hunter',
-		color: '#A330C9',
-		modules: [
-			{key: 'Havoc'},
-			{key: 'Vengeance'}],
-	},{
-		key: 'Druid',
-		color: '#FF7D0A',
-		modules: [
-			{key: 'Balance'},
-			{key: 'Feral'},
-			{key: 'Guardian'},
-			{key: 'Restoration'}],
-	}, {
-		key: 'Hunter',
-		color: '#ABD473',
-		modules: [
-			{key: 'Beastmaster'},
-			{key: 'Marksman'},
-			{key: 'Survival'}],
-	}, {
-		key: 'Mage',
-		color: '#40C7EB',
-		modules: [
-			{key: 'Arcane'},
-			{key: 'Fire', value: "Fire Mage"},
-			{key: 'Frost'}],
-	}, {
-		key: 'Monk',
-		color: '#00FF96',
-		modules: [
-			{key: 'Brewmaster'},
-			{key: 'Mistweaver'},
-			{key: 'Windwalker'}],
-	}, {
-		key: 'Paladin',
-		color: '#F58CBA',
-		modules: [
-			{key: 'Holy'},
-			{key: 'Protection'},
-			{key: 'Retribution'}],
-	}, {
-		key: 'Priest',
-		color: '#FFFFFF',
-		modules: [
-			{key: 'Discipline'},
-			{key: 'Holy'},
-			{key: 'Shadow'}],
-	}, {
-		key: 'Rogue',
-		color: '#FFF569',
-		modules: [
-			{key: 'Assassination'},
-			{key: 'Subtlety'},
-			{key: 'Outlaw'}],
-	}, {
-		key: 'Shaman',
-		color: '#0070DE',
-		modules: [
-			{key: 'Enhancement'},
-			{key: 'Elemental'},
-			{key: 'Restoration'}],
-	}, {
-		key: 'Warlock',
-		color: '#8787ED',
-		modules: [
-			{key: 'Affliction'},
-			{key: 'Demonology'},
-			{key: 'Destruction'}],
-	}, {
-		key: 'Warrior',
-		color: '#C79C6E',
-		modules: [
-			{key: 'Arms'},
-			{key: 'Fury'},
-			{key: 'Protection'}],
-	},
+			{dps1: 'Retribution'},
+			{dps2: 'Survival'},
+			{healer: 'Discipline'}],
+    }
 ]
+    
 
-
-
-class TheVsForm3 extends React.Component {
+class TheVsForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-         classSpecModules,
          enemyComp: "---------------",
          teamComp: "---------------",
+         teamCompAuto,
          enemyCompOpen: false,
-         teamCompOpen: false
+         teamCompOpen: false,
         }
 
     }
 
-    toggle=(event) => {
+    toggle = (event) => {
         const {target: {name}} = event;
         const {teamCompOpen, enemyCompOpen} = this.state;
         this.setState({[name]: !this.state[name]}  );
@@ -118,14 +39,14 @@ class TheVsForm3 extends React.Component {
         // })
       }
      
-    close=(event)=> {
+    close = (event)=> {
         const { target: {value, name}} = event;
         const {teamCompOpen, enemyCompOpen} = this.state;
         console.log(this.state,"before")
         event.preventDefault();
         this.setState({ [name]: value });
         if (name === "teamComp") {
-            console.log("in if statemen")
+            console.log("in if statement")
             this.setState({teamCompOpen: !this.state.teamCompOpen})
             console.log(this.state)
         } else {
@@ -211,4 +132,4 @@ class TheVsForm3 extends React.Component {
 
   
 
-export default TheVsForm3;
+export default TheVsForm;
