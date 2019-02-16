@@ -9,8 +9,74 @@ const teamCompAuto = [
 		modules: [
 			{dps1: 'Retribution'},
 			{dps2: 'Survival'},
-			{healer: 'Discipline'}],
-    }
+			{healer: 'Discipline'}]
+    },{
+        key: 'God Comp',
+        modules: [
+            {dps1: 'Shadow'},
+            {dps2: 'Frost'},
+            {healer: 'Resto'}]
+    },{
+        key: 'KFC',
+        modules: [
+            {dps1:'Arms'}, 
+            {dps2: 'Beast Master'},
+            {healer: 'Resto'}]
+    },{
+        key: 'RMP',
+        modules: [
+            {dps1:'Assassin'}, 
+            {dps2: 'Frost'},
+            {healer: 'Discipline'}]
+    },{
+        key: 'LSD',
+        modules: [
+            {dps1:'Destruction'}, 
+            {dps2: 'Elemental'},
+            {healer: 'Resto'}]
+    },{
+        key: 'LSD2',
+        modules: [
+            {dps1:'Destruction'}, 
+            {dps2: 'Balance'},
+            {healer: 'Resto'}]
+    },{
+        key: 'OwlPlay',
+        modules: [
+            {dps1:'Balance'}, 
+            {dps2: 'Shadow'},
+            {healer: 'Resto'}]
+    },{
+        key: 'Stormrage',
+        modules: [
+            {dps1:'Vengeance'}, 
+            {dps2: 'Balance'},
+            {healer: 'Resto'}]
+    },{
+        key: 'Shatterplay',
+        modules: [
+            {dps1:'Shadow'}, 
+            {dps2: 'Frost'},
+            {healer: 'Resto'}]
+    },{
+        key: 'Thug Cleave',
+        modules: [
+            {dps1:'Subtlety'}, 
+            {dps2: 'Beastmaster'},
+            {healer: 'Resto'}]
+    },{
+        key: 'TSG',
+        modules: [
+            {dps1:'Unholy'}, 
+            {dps2: 'Arms'},
+            {healer: 'Holy'}]
+    },{
+        key: 'Turbo',
+        modules: [
+            {dps1:'Enhance'}, 
+            {dps2: 'Arms'},
+            {healer: 'Mistweaver'}]
+    },
 ]
     
 
@@ -20,7 +86,7 @@ class TheVsForm extends React.Component {
         this.state = {
          enemyComp: "---------------",
          teamComp: "---------------",
-         teamCompAuto,
+         teamCompAuto: [],
          enemyCompOpen: false,
          teamCompOpen: false,
         }
@@ -46,15 +112,20 @@ class TheVsForm extends React.Component {
         event.preventDefault();
         this.setState({ [name]: value });
         if (name === "teamComp") {
-            console.log("in if statement")
+            console.log("<<<<<<<<<<<<<<<<<< in the if statement>>>>>>>>>>>>>>>>")
             this.setState({teamCompOpen: !this.state.teamCompOpen})
-            console.log(this.state)
+           // console.log(this.state)            
         } else {
             this.setState({enemyCompOpen: !enemyCompOpen})
         }
       }
 
-    
+    autofill = (event) => {
+        const {teamCompAuto: {key, modules}} = event;
+        const {dps1, dps2, healer} = this.state;
+        event.preventDefault();
+        this.setState({ [key]:modules});
+    }
 
     render(){
         const { teamComp, enemyComp } = this.state;
@@ -93,9 +164,9 @@ class TheVsForm extends React.Component {
                 </div>
             <br></br>
             <br></br>
-            <VsRoles autofill={teamComp} role="dps1"/>
-            <VsRoles autofill={teamComp} role="dps2"/>
-            <VsRoles autofill={teamComp} role="healer"/>
+            <VsRoles autofill={teamCompAuto} name="dps1"/>
+            <VsRoles autofill={teamCompAuto} name="dps2"/>
+            <VsRoles autofill={teamCompAuto} name="healer"/>
             <label><b><i>-------------------------------------------VS--------------------------------------------</i></b></label>
             <br></br>
 
@@ -121,9 +192,9 @@ class TheVsForm extends React.Component {
                 </div>
             <br></br>
             <br></br>
-            <VsRoles autofill={enemyComp} role="enemydps1"/>
-            <VsRoles autofill={enemyComp} role="enemydps2"/>
-            <VsRoles autofill={enemyComp} role="enemyhealer"/>
+            <VsRoles autofill={enemyComp} name="enemydps1"/>
+            <VsRoles autofill={enemyComp} name="enemydps2"/>
+            <VsRoles autofill={enemyComp} name="enemyhealer"/>
             </form>
         )
     }
