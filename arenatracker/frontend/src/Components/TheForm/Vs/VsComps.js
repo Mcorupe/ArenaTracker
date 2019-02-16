@@ -97,6 +97,7 @@ class TheVsForm extends React.Component {
         const {target: {name}} = event;
         const {teamCompOpen, enemyCompOpen} = this.state;
         this.setState({[name]: !this.state[name]}  );
+        //this.setState({teamCompOpen: !this.state.teamCompOpen})
         // this.setState((prevState) => {
         //     const keys = Object.keys(prevState);
         //     if(keys.indexOf(name)> -1) {
@@ -112,20 +113,20 @@ class TheVsForm extends React.Component {
         event.preventDefault();
         this.setState({ [name]: value });
         if (name === "teamComp") {
-            console.log("<<<<<<<<<<<<<<<<<< in the if statement>>>>>>>>>>>>>>>>")
-            this.setState({teamCompOpen: !this.state.teamCompOpen})
+            console.log("<<<<<<<<<<<<<<<<<< in the if statement>>>>>>>>>>>>>>>>>>")
+            this.setState({teamCompOpen: false})
            // console.log(this.state)            
         } else {
-            this.setState({enemyCompOpen: !enemyCompOpen})
+            this.setState({enemyCompOpen: false})
         }
       }
 
-    autofill = (event) => {
-        const {teamCompAuto: {key, modules}} = event;
-        const {dps1, dps2, healer} = this.state;
-        event.preventDefault();
-        this.setState({ [key]:modules});
-    }
+    // autofill = (event) => {
+    //     const {teamCompAuto: {key, modules}} = event;
+    //     const {dps1, dps2, healer} = this.state;
+    //     event.preventDefault();
+    //     this.setState({ [key]:modules});
+    // }
 
     render(){
         const { teamComp, enemyComp } = this.state;
@@ -164,7 +165,7 @@ class TheVsForm extends React.Component {
                 </div>
             <br></br>
             <br></br>
-            <VsRoles autofill={teamCompAuto} name="dps1"/>
+            <VsRoles autofill={teamCompAuto} name="dps1"/> {/* was just teamComp, not teamCompAuto */}
             <VsRoles autofill={teamCompAuto} name="dps2"/>
             <VsRoles autofill={teamCompAuto} name="healer"/>
             <label><b><i>-------------------------------------------VS--------------------------------------------</i></b></label>
