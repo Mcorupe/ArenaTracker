@@ -113,7 +113,7 @@ class TheVsForm extends React.Component {
         event.preventDefault();
         this.setState({ [name]: value });
         if (name === "teamComp") {
-            console.log("<<<<<<<<<<<<<<<<<< in the if statement>>>>>>>>>>>>>>>>>>")
+            console.log("<<><<>><<<<><<><<>< in the if statement>>>>><>>>><>>>>><>>><>>")
             this.setState({teamCompOpen: false})
            // console.log(this.state)            
         } else {
@@ -165,7 +165,8 @@ class TheVsForm extends React.Component {
                 </div>
             <br></br>
             <br></br>
-            <VsRoles autofill={teamCompAuto} name="dps1"/> {/* was just teamComp, not teamCompAuto */}
+            {/* pass in teampcomp/enemycomp as a prop */}
+            <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="dps1"/>  
             <VsRoles autofill={teamCompAuto} name="dps2"/>
             <VsRoles autofill={teamCompAuto} name="healer"/>
             <label><b><i>-------------------------------------------VS--------------------------------------------</i></b></label>

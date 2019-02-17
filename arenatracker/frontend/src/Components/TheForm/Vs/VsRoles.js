@@ -1,10 +1,12 @@
 import React from 'react';
 import DropdownMenu , { NestedDropdownMenu } from 'react-dd-menu';
+import './ddMenu.css';
 
 
 const classSpecModules = [
     {
 		key: 'Death Knight',
+		theDontClick: false,
 		color: '#C41F3B',
 		modules: [
 			{key: 'Blood'},
@@ -12,12 +14,14 @@ const classSpecModules = [
 			{key: 'Unholy'}],
 	}, {
 		key: 'Demon Hunter',
+		theDontClick: false,
 		color: '#A330C9',
 		modules: [
 			{key: 'Havoc'},
 			{key: 'Vengeance'}],
 	},{
 		key: 'Druid',
+		theDontClick: false,
 		color: '#FF7D0A',
 		modules: [
 			{key: 'Balance'},
@@ -26,6 +30,7 @@ const classSpecModules = [
 			{key: 'Restoration'}],
 	}, {
 		key: 'Hunter',
+		theDontClick: false,
 		color: '#ABD473',
 		modules: [
 			{key: 'Beastmaster'},
@@ -33,6 +38,7 @@ const classSpecModules = [
 			{key: 'Survival'}],
 	}, {
 		key: 'Mage',
+		theDontClick: false,
 		color: '#40C7EB',
 		modules: [
 			{key: 'Arcane'},
@@ -40,6 +46,7 @@ const classSpecModules = [
 			{key: 'Frost'}],
 	}, {
 		key: 'Monk',
+		theDontClick: false,
 		color: '#00FF96',
 		modules: [
 			{key: 'Brewmaster'},
@@ -47,6 +54,7 @@ const classSpecModules = [
 			{key: 'Windwalker'}],
 	}, {
 		key: 'Paladin',
+		theDontClick: false,
 		color: '#F58CBA',
 		modules: [
 			{key: 'Holy'},
@@ -54,6 +62,7 @@ const classSpecModules = [
 			{key: 'Retribution'}],
 	}, {
 		key: 'Priest',
+		theDontClick: false,
 		color: '#FFFFFF',
 		modules: [
 			{key: 'Discipline'},
@@ -61,6 +70,7 @@ const classSpecModules = [
 			{key: 'Shadow'}],
 	}, {
 		key: 'Rogue',
+		theDontClick: false,
 		color: '#FFF569',
 		modules: [
 			{key: 'Assassination'},
@@ -68,6 +78,7 @@ const classSpecModules = [
 			{key: 'Outlaw'}],
 	}, {
 		key: 'Shaman',
+		theDontClick: false,
 		color: '#0070DE',
 		modules: [
 			{key: 'Enhancement'},
@@ -75,6 +86,7 @@ const classSpecModules = [
 			{key: 'Restoration'}],
 	}, {
 		key: 'Warlock',
+		theDontClick: false,
 		color: '#8787ED',
 		modules: [
 			{key: 'Affliction'},
@@ -82,6 +94,7 @@ const classSpecModules = [
 			{key: 'Destruction'}],
 	}, {
 		key: 'Warrior',
+		theDontClick: false,
 		color: '#C79C6E',
 		modules: [
 			{key: 'Arms'},
@@ -90,61 +103,60 @@ const classSpecModules = [
 	},
 ]
 
-
-
 class TheVsForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-         classSpecModules,
-         teamComp: "---------------"
+         classSpecModules
         }
-
     }
 
     toggle = () => {
-        this.setState({ isMenuOpen: !this.state.isMenuOpen });
-      }
+			this.setState({ isMenuOpen: !this.state.isMenuOpen });
+		}
+		
+		//call componentDidUpdate
+		//pass in peramiters		//prevstate, prevprops
+		// if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)
      
     close = (event) => {
-        const { target: {value, name}} = event;
-        event.preventDefault();
-        this.setState({ isMenuOpen: false, [name]: value });
-      }
-
-   
-    
-
+		const thing = event.target.getAttribute('data-canclick');
+		event.preventDefault();
+		if ((thing === true || thing === null)){
+			const { target: {value}} = event;
+			this.setState({ isMenuOpen: false, character: value });
+			}
+		}
+	
     render(){
-        const { teamComp } = this.state;
+		const { name } = this.props;
+		const { character } = this.state;
         const menuOptions = {
             isOpen: this.state.isMenuOpen,
             close: this.close,
-            toggle: <button type="button" onClick={this.toggle}>{teamComp}</button>,
-            align: 'right'
+            toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>,
+			align: 'right'
         };
 
-        const nestedProps = {
-            toggle: <button type="button" name="nestedDD" onClick={this.toggle}>++++</button>,
-            animate: true,
-          };
-          console.log(this.props)
-		  {/* name is passed in   */}
-		  return(
-            <>
-            {this.props.role}
+				return(
+					<>
             <DropdownMenu  {...menuOptions}>
 				{classSpecModules.map(specs => {
+					const nestedProps = {
+						toggle: <button onClick={this.close} name={name} data-canclick={specs.theDontClick} value={specs.key}>{specs.key}</button>,
+						animate: false,
+						leaveTimeout: 1,
+						delay: 1
+					};
 					return (
-                        <>
-						<li> <button onClick={this.close} name="Dps1" value={specs.key}>{specs.key}</button> </li>
-                          {specs.modules.map(modules=>{
-							return (
-								<NestedDropdownMenu {...nestedProps}>
-									<li><button onClick={this.close} name="Dps1" value={modules.key}>{modules.key}</button></li>
-								</NestedDropdownMenu>
-							)
+          	<>
+						<NestedDropdownMenu {...nestedProps}>
+              	{specs.modules.map(modules=>{
+								return (
+								<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
+								)
 							})}
+							</NestedDropdownMenu>
 						</>
 					)
 				} )}                            
