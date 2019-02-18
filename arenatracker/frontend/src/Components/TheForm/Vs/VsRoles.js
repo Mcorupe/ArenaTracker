@@ -138,28 +138,27 @@ class TheVsForm extends React.Component {
 			align: 'right'
         };
 
-				return(
-					<>
+		return(
+			<>
             <DropdownMenu  {...menuOptions}>
 				{classSpecModules.map(specs => {
 					const nestedProps = {
 						toggle: <button onClick={this.close} name={name} data-canclick={specs.theDontClick} value={specs.key}>{specs.key}</button>,
 						animate: false,
 						leaveTimeout: 1,
-						delay: 1
+						delay: 1,
 					};
-					return (
-          	<>
-						<NestedDropdownMenu {...nestedProps}>
-              	{specs.modules.map(modules=>{
-								return (
-								<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
-								)
-							})}
-							</NestedDropdownMenu>
-						</>
-					)
-				} )}                            
+		return (
+        <>
+		<NestedDropdownMenu {...nestedProps}>
+        {specs.modules.map(modules=>{
+			return (
+			<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
+			)})}
+			</NestedDropdownMenu>
+			</>
+		)
+	} )}                            
             </DropdownMenu>
             </>
         )

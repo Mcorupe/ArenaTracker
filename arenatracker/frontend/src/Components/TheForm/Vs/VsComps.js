@@ -113,9 +113,8 @@ class TheVsForm extends React.Component {
         event.preventDefault();
         this.setState({ [name]: value });
         if (name === "teamComp") {
-            console.log("<<><<>><<<<><<><<>< in the if statement>>>>><>>>><>>>>><>>><>>")
+            console.log("<<><<>><<<<><<><<>< in the 'close' func's if statement>>>>><>>>><>>>>><>>><>>")
             this.setState({teamCompOpen: false})
-           // console.log(this.state)            
         } else {
             this.setState({enemyCompOpen: false})
         }
@@ -134,7 +133,7 @@ class TheVsForm extends React.Component {
             isOpen: this.state.teamCompOpen,
             close: this.close,
             toggle: <button type="button" name="teamCompOpen" onClick={this.toggle}>{teamComp}</button>,
-            align: 'right'
+            align: 'right',
         }
         const menuOptions2 = {
             isOpen: this.state.enemyCompOpen,
@@ -149,6 +148,7 @@ class TheVsForm extends React.Component {
             </label>
                 <div className="comps">
                 <DropdownMenu {...menuOptions} value={this.state.value}>
+                    <li> <button onClick={this.close} name="teamComp" value="Variant">Variant/Hybrid</button></li>
                     <li> <button onClick={this.close} name="teamComp" value="Cupid Cleave">Cupid Cleave</button></li>  {/*Ret/hunt/x*/}
                     <li> <button onClick={this.close} name="teamComp" value="God Comp">God Comp</button></li>          {/*Spriest/Mage/Rdruid*/}
                     <li> <button onClick={this.close} name="teamComp" value="KFC">KFC</button></li>                    {/*war/hunt/x*/}
@@ -169,14 +169,17 @@ class TheVsForm extends React.Component {
             <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="dps1"/>  
             <VsRoles autofill={teamCompAuto} name="dps2"/>
             <VsRoles autofill={teamCompAuto} name="healer"/>
-            <label><b><i>-------------------------------------------VS--------------------------------------------</i></b></label>
-            <br></br>
+            <label>
+            <br/>
+            <i>-------------------------------------------VS--------------------------------------------</i></label>
+            <br/>
 
             <label>
                 Enemy team's comp:
             </label>
                 <div className="comps">
                 <DropdownMenu {...menuOptions2} value={this.state.value}>
+                <li> <button onClick={this.close} name="teamComp" value="Variant">Variant/Hybrid</button></li>
                     <li> <button onClick={this.close} name="enemyComp" value="Cupid Cleave">Cupid Cleave</button></li>  {/*Ret/hunt/x*/}
                     <li> <button onClick={this.close} name="enemyComp" value="God Comp">God Comp</button></li>          {/*Spriest/Mage/Rdruid*/}
                     <li> <button onClick={this.close} name="enemyComp" value="KFC">KFC</button></li>                    {/*war/hunt/x*/}
