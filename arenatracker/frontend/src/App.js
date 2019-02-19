@@ -7,6 +7,7 @@ import {TheThemForm} from './Components/TheForm/Them';
 import {WinLoss} from './Components/TheForm/WinLoss';
 import {Percentages} from './Components/TheForm/Percentages';
 import {PopularChoice} from './Components/TheForm/PopularChoice';
+//import background from './Images';
 
 class App extends Component {
 constructor(props) {

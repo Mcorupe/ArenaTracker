@@ -1,5 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 
+
+const ButtonWin = styled.button`
+    background-color: #BDC04E;
+    color: black;
+    font-size: 42px;
+    display: inline-block;
+    padding: 15px 32px;
+    
+`;
+
+
+const ButtonLoss = styled.button`
+    background-color: #C04E4E;
+    color: black;
+    font-size: 43px;
+    display: inline-block;
+    padding: 15px 32px;
+`;
+    
 
 class WinLoss extends React.Component { 
     constructor(props) {
@@ -20,12 +40,14 @@ class WinLoss extends React.Component {
         });
     }
 
+   
+
     render() {
         return(
             <form onSubmit={this.handleSubmit}>
                 <br></br>
-                <button onSubmit={this.handleSubmit}>W</button>
-                <button onSubmit={this.handleSubmit}>L</button>
+                <ButtonWin onClick={this.handleSubmit} name="winButton">W</ButtonWin>
+                <ButtonLoss onClick={this.handleSubmit} name="lossButton">L</ButtonLoss>
             </form>
         )
     }
