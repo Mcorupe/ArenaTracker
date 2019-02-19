@@ -103,6 +103,17 @@ const classSpecModules = [
 	},
 ]
 
+//TODO:
+
+//1. get autofill functionallity
+	//call componentDidUpdate
+	//pass in peramiters		//prevstate, prevprops
+	// if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)
+
+//2. set limits on healer selections
+
+
+
 class TheVsForm extends React.Component {
     constructor(props) {
         super(props)
@@ -115,9 +126,6 @@ class TheVsForm extends React.Component {
 			this.setState({ isMenuOpen: !this.state.isMenuOpen });
 		}
 		
-		//call componentDidUpdate
-		//pass in peramiters		//prevstate, prevprops
-		// if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)
      
     close = (event) => {
 		const thing = event.target.getAttribute('data-canclick');

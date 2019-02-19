@@ -7,7 +7,8 @@ import {TheThemForm} from './Components/TheForm/Them';
 import {WinLoss} from './Components/TheForm/WinLoss';
 import {Percentages} from './Components/TheForm/Percentages';
 import {PopularChoice} from './Components/TheForm/PopularChoice';
-//import background from './Images';
+import styled from 'styled-components';
+import {background} from './Images/Images';
 
 class App extends Component {
 constructor(props) {
@@ -46,6 +47,7 @@ handleSubmit(event) {
 render() {
    return (
      <div className="App">
+      <img src={background}/>
       <label>________________________________________________________________________________________</label>
        <TheVsForm onSubmit={this.handleSubmit}>   {/*do i need this submit?*/}
        </TheVsForm>
@@ -70,9 +72,20 @@ render() {
   }
 }
 
-export default App;
 
 
+// const theBackground = styled.div`
+//     background-image: background;
+//     border: 1px solid #000;
+//     background-size: 100%;
+//     background-position: 'center';
+//     background-repeat: 'no-repeat';
+//     `;
+    export default App;
+    
+    
+    // width: 200px;
+    // height: 200px;
 
  
 // <ThemeContext.Provider value={themeChange}>

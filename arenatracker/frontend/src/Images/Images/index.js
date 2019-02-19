@@ -1,0 +1,1 @@
+export {default as background} from '../Images/background.jpg';

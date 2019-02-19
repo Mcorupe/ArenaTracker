@@ -148,7 +148,7 @@ class TheVsForm extends React.Component {
             </label>
                 <div className="comps">
                 <DropdownMenu {...menuOptions} value={this.state.value}>
-                    <li> <button onClick={this.close} name="teamComp" value="Variant">Variant/Hybrid</button></li>
+                    <li> <button onClick={this.close} name="teamComp" value="Variant">Variant/Hybrid</button></li>{/*  this will be the default If not named comp */}
                     <li> <button onClick={this.close} name="teamComp" value="Cupid Cleave">Cupid Cleave</button></li>  {/*Ret/hunt/x*/}
                     <li> <button onClick={this.close} name="teamComp" value="God Comp">God Comp</button></li>          {/*Spriest/Mage/Rdruid*/}
                     <li> <button onClick={this.close} name="teamComp" value="KFC">KFC</button></li>                    {/*war/hunt/x*/}
