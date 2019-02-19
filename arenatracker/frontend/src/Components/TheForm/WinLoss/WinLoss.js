@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const ButtonWin = styled.button`
-    background-color: #BDC04E;
+    background-color: #D4AF37;
     color: black;
     font-size: 42px;
     display: inline-block;
@@ -13,7 +13,7 @@ const ButtonWin = styled.button`
 
 
 const ButtonLoss = styled.button`
-    background-color: #C04E4E;
+    background-color: #C21807;
     color: black;
     font-size: 43px;
     display: inline-block;

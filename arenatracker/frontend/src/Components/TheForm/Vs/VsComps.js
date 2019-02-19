@@ -84,8 +84,8 @@ class TheVsForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-         enemyComp: "---------------",
-         teamComp: "---------------",
+         enemyComp: "Enemy Comp",
+         teamComp: "Team Comp",
          teamCompAuto: [],
          enemyCompOpen: false,
          teamCompOpen: false,
@@ -143,9 +143,7 @@ class TheVsForm extends React.Component {
         }
         return(
             <form onSubmit={this.handleSubmit}>
-            <label>
-                Your team comp: 
-            </label>
+            <br></br>
                 <div className="comps">
                 <DropdownMenu {...menuOptions} value={this.state.value}>
                     <li> <button onClick={this.close} name="teamComp" value="Variant">Variant/Hybrid</button></li>{/*  this will be the default If not named comp */}
@@ -166,17 +164,16 @@ class TheVsForm extends React.Component {
             <br></br>
             <br></br>
             {/* pass in teampcomp/enemycomp as a prop */}
-            <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="dps1"/>  
-            <VsRoles autofill={teamCompAuto} name="dps2"/>
-            <VsRoles autofill={teamCompAuto} name="healer"/>
+            <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Dps"/>  
+            <VsRoles autofill={teamCompAuto} name="Dps"/>
+            <VsRoles autofill={teamCompAuto} name="Healer"/>
             <label>
+            <br></br>
+            <br></br>
+            <i>----------------------------------------   VS  -----------------------------------------</i></label>
             <br/>
-            <i>-------------------------------------------VS--------------------------------------------</i></label>
-            <br/>
-
-            <label>
-                Enemy team's comp:
-            </label>
+            <br></br>
+        
                 <div className="comps">
                 <DropdownMenu {...menuOptions2} value={this.state.value}>
                 <li> <button onClick={this.close} name="teamComp" value="Variant">Variant/Hybrid</button></li>
@@ -197,9 +194,9 @@ class TheVsForm extends React.Component {
                 </div>
             <br></br>
             <br></br>
-            <VsRoles autofill={enemyComp} name="enemydps1"/>
-            <VsRoles autofill={enemyComp} name="enemydps2"/>
-            <VsRoles autofill={enemyComp} name="enemyhealer"/>
+            <VsRoles autofill={enemyComp} name="Dps"/>
+            <VsRoles autofill={enemyComp} name="Dps"/>
+            <VsRoles autofill={enemyComp} name="Healer"/>
             </form>
         )
     }

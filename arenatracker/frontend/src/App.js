@@ -7,8 +7,7 @@ import {TheThemForm} from './Components/TheForm/Them';
 import {WinLoss} from './Components/TheForm/WinLoss';
 import {Percentages} from './Components/TheForm/Percentages';
 import {PopularChoice} from './Components/TheForm/PopularChoice';
-import styled from 'styled-components';
-import {background} from './Images/Images';
+import './App.css';
 
 class App extends Component {
 constructor(props) {
@@ -47,31 +46,31 @@ handleSubmit(event) {
 render() {
    return (
      <div className="App">
-      <img src={background}/>
-      <label>________________________________________________________________________________________</label>
+      <label>__________________________________________________________</label>
        <TheVsForm onSubmit={this.handleSubmit}>   {/*do i need this submit?*/}
        </TheVsForm>
-       <label>________________________________________________________________________________________</label>
+      <label>__________________________________________________________</label>
        <WinLoss onSubmit={this.handleSubmit}>    {/*this one i know i'll need?*/}
        </WinLoss>
-       <label>________________________________________________________________________________________</label>
+      <label>__________________________________________________________</label>
        <TheUsForm onSubmit={this.handleSubmit}>     {/*do i need this submit?*/}
        </TheUsForm>
-      <label>________________________________________________________________________________________</label>
+      <label>__________________________________________________________</label>
        <TheThemForm onSubmit={this.handleSubmit}>   {/*do i need this submit?*/}
        </TheThemForm>
-       <label>________________________________________________________________________________________</label>
+      <label>__________________________________________________________</label>
        <PopularChoice>
        </PopularChoice>
-       <label>________________________________________________________________________________________</label>       
-       <br></br>
+      <label>__________________________________________________________</label>       
        <Percentages>
        </Percentages>
+      <label>__________________________________________________________</label>
      </div> 
     );
   }
 }
 
+export default App;
 
 
 // const theBackground = styled.div`
@@ -81,7 +80,6 @@ render() {
 //     background-position: 'center';
 //     background-repeat: 'no-repeat';
 //     `;
-    export default App;
     
     
     // width: 200px;

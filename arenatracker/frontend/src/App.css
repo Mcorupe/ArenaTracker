@@ -1,8 +1,19 @@
 
  
 .App {
-    padding: 0%;
+    /* padding-bottom: 10%; */
+    /* margin: 0; */
     text-align: center;
+    font: white;
+    font-family: Rock Salt, bold;
+    font-size: 100%;
     background: #5C5C5C;
+    background-image: url('./Images/Images/background.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    /* margin: 100; */
+    /* overflow: hidden; */
+    
     
   } 

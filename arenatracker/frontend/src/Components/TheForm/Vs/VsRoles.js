@@ -2,8 +2,52 @@ import React from 'react';
 import DropdownMenu , { NestedDropdownMenu } from 'react-dd-menu';
 import './ddMenu.css';
 
+/*
+TODO:
+1. get autofill functionallity
+	call componentDidUpdate  or whatever it's depricated to
+	pass in parameters		//prevstate, prevprops
+	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)
 
-const classSpecModules = [
+2. set limits on healer selections
+
+*/
+
+const classHealerModules = [
+	{
+	key: 'Druid',
+		theDontClick: false,
+		color: '#FF7D0A',
+		modules: [
+			{key: 'Restoration'}]
+	}, {
+		key: 'Monk',
+		theDontClick: false,
+		color: '#00FF96',
+		modules: [
+			{key: 'Mistweaver'}]
+	}, {
+		key: 'Paladin',
+		theDontClick: false,
+		color: '#F58CBA',
+		modules: [
+			{key: 'Holy'}]
+	},  {
+		key: 'Priest',
+		theDontClick: false,
+		color: '#FFFFFF',
+		modules: [
+			{key: 'Discipline'},
+			{key: 'Holy'}]
+	}, {
+		key: 'Shaman',
+		theDontClick: false,
+		color: '#0070DE',
+		modules: [
+			{key: 'Restoration'}]
+	}
+]
+const classDmgModules = [
     {
 		key: 'Death Knight',
 		theDontClick: false,
@@ -26,8 +70,8 @@ const classSpecModules = [
 		modules: [
 			{key: 'Balance'},
 			{key: 'Feral'},
-			{key: 'Guardian'},
-			{key: 'Restoration'}],
+			{key: 'Guardian'}]
+			
 	}, {
 		key: 'Hunter',
 		theDontClick: false,
@@ -50,14 +94,12 @@ const classSpecModules = [
 		color: '#00FF96',
 		modules: [
 			{key: 'Brewmaster'},
-			{key: 'Mistweaver'},
 			{key: 'Windwalker'}],
 	}, {
 		key: 'Paladin',
 		theDontClick: false,
 		color: '#F58CBA',
 		modules: [
-			{key: 'Holy'},
 			{key: 'Protection'},
 			{key: 'Retribution'}],
 	}, {
@@ -65,8 +107,6 @@ const classSpecModules = [
 		theDontClick: false,
 		color: '#FFFFFF',
 		modules: [
-			{key: 'Discipline'},
-			{key: 'Holy'},
 			{key: 'Shadow'}],
 	}, {
 		key: 'Rogue',
@@ -81,9 +121,8 @@ const classSpecModules = [
 		theDontClick: false,
 		color: '#0070DE',
 		modules: [
-			{key: 'Enhancement'},
 			{key: 'Elemental'},
-			{key: 'Restoration'}],
+			{key: 'Enhance'}],
 	}, {
 		key: 'Warlock',
 		theDontClick: false,
@@ -103,22 +142,14 @@ const classSpecModules = [
 	},
 ]
 
-//TODO:
-
-//1. get autofill functionallity
-	//call componentDidUpdate
-	//pass in peramiters		//prevstate, prevprops
-	// if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)
-
-//2. set limits on healer selections
-
 
 
 class TheVsForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-         classSpecModules
+		 classDmgModules,
+		 classHealerModules
         }
     }
 
@@ -132,48 +163,75 @@ class TheVsForm extends React.Component {
 		event.preventDefault();
 		if ((thing === true || thing === null)){
 			const { target: {value}} = event;
-			this.setState({ isMenuOpen: false, character: value });
+			this.setState({ isMenuOpen: false, dmg: value });   // character: value
 			}
 		}
 	
     render(){
 		const { name } = this.props;
-		const { character } = this.state;
+		const { dmg, healer } = this.state;
+		//const {character} = this.state;
         const menuOptions = {
             isOpen: this.state.isMenuOpen,
             close: this.close,
-            toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>,
+            toggle: <button type="button" onClick={this.toggle}>{dmg ? dmg : name }</button>, //{character ? character : name}
+			align: 'right'
+		};
+		const menuOptions2 = {
+            isOpen: this.state.isMenuOpen,
+            close: this.close,
+            toggle: <button type="button" onClick={this.toggle}>{healer ? healer : name }</button>, //{character ? character : name}
 			align: 'right'
         };
 
 		return(
 			<>
             <DropdownMenu  {...menuOptions}>
-				{classSpecModules.map(specs => {
-					const nestedProps = {
+				{classDmgModules.map(specs => {
+					const nestedProps1 = {
 						toggle: <button onClick={this.close} name={name} data-canclick={specs.theDontClick} value={specs.key}>{specs.key}</button>,
 						animate: false,
 						leaveTimeout: 1,
 						delay: 1,
 					};
-		return (
-        <>
-		<NestedDropdownMenu {...nestedProps}>
+					
+					return (
+						<>
+		<NestedDropdownMenu {...nestedProps1}>
         {specs.modules.map(modules=>{
 			return (
-			<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
-			)})}
+				<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
+				)})}
+
 			</NestedDropdownMenu>
+			
 			</>
+		
 		)
 	} )}                            
             </DropdownMenu>
             </>
         )
     }
-
+	
 }
 
+// {classHealerModules.map(specs => {
+// 	const nestedProps2 = {
+// 		toggle: <button onClick={this.close} name={name} data-canclick={specs.theDontClick} value={specs.key}>{specs.key}</button>,
+// 		animate: false,
+// 		leaveTimeout: 1,
+// 		delay: 1,
+// 	}
+// })}
+
+// <NestedDropdownMenu {...nestedProps2}>
+// {specs.modules.map(modules=>{
+//    return (
+//    <li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
+//    )})}
+
+//    </NestedDropdownMenu> 
   
 
 export default TheVsForm;
