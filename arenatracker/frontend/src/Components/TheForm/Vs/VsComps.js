@@ -109,11 +109,9 @@ class TheVsForm extends React.Component {
     close = (event)=> {
         const { target: {value, name}} = event;
         const {teamCompOpen, enemyCompOpen} = this.state;
-        console.log(this.state,"before")
         event.preventDefault();
         this.setState({ [name]: value });
         if (name === "teamComp") {
-            console.log("<<><<>><<<<><<><<>< in the 'close' func's if statement>>>>><>>>><>>>>><>>><>>")
             this.setState({teamCompOpen: false})
         } else {
             this.setState({enemyCompOpen: false})

@@ -53,7 +53,7 @@ render() {
        <WinLoss onSubmit={this.handleSubmit}>    {/*this one i know i'll need?*/}
        </WinLoss>
       <label>__________________________________________________________</label>
-       <TheUsForm onSubmit={this.handleSubmit}>     {/*do i need this submit?*/}
+       <TheUsForm onSubmit={this.handleSubmit}>    
        </TheUsForm>
       <label>__________________________________________________________</label>
        <TheThemForm onSubmit={this.handleSubmit}>   {/*do i need this submit?*/}

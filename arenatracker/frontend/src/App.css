@@ -9,7 +9,7 @@
     font-size: 100%;
     background: #5C5C5C;
     background-image: url('./Images/Images/background.jpg');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     
     /* margin: 100; */

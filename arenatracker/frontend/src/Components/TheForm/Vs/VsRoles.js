@@ -141,7 +141,81 @@ const classDmgModules = [
 			{key: 'Protection'}],
 	},
 ]
-
+const teamCompAuto = [
+    {
+		key: 'Cupid Cleave',
+		modules: [
+			{dps1: 'Retribution'},
+			{dps2: 'Survival'},
+			{healer: 'Discipline'}]
+    },{
+        key: 'God Comp',
+        modules: [
+            {dps1: 'Shadow'},
+            {dps2: 'Frost'},
+            {healer: 'Resto'}]
+    },{
+        key: 'KFC',
+        modules: [
+            {dps1:'Arms'}, 
+            {dps2: 'Beast Master'},
+            {healer: 'Resto'}]
+    },{
+        key: 'RMP',
+        modules: [
+            {dps1:'Assassin'}, 
+            {dps2: 'Frost'},
+            {healer: 'Discipline'}]
+    },{
+        key: 'LSD',
+        modules: [
+            {dps1:'Destruction'}, 
+            {dps2: 'Elemental'},
+            {healer: 'Resto'}]
+    },{
+        key: 'LSD2',
+        modules: [
+            {dps1:'Destruction'}, 
+            {dps2: 'Balance'},
+            {healer: 'Resto'}]
+    },{
+        key: 'OwlPlay',
+        modules: [
+            {dps1:'Balance'}, 
+            {dps2: 'Shadow'},
+            {healer: 'Resto'}]
+    },{
+        key: 'Stormrage',
+        modules: [
+            {dps1:'Vengeance'}, 
+            {dps2: 'Balance'},
+            {healer: 'Resto'}]
+    },{
+        key: 'Shatterplay',
+        modules: [
+            {dps1:'Shadow'}, 
+            {dps2: 'Frost'},
+            {healer: 'Resto'}]
+    },{
+        key: 'Thug Cleave',
+        modules: [
+            {dps1:'Subtlety'}, 
+            {dps2: 'Beastmaster'},
+            {healer: 'Resto'}]
+    },{
+        key: 'TSG',
+        modules: [
+            {dps1:'Unholy'}, 
+            {dps2: 'Arms'},
+            {healer: 'Holy'}]
+    },{
+        key: 'Turbo',
+        modules: [
+            {dps1:'Enhance'}, 
+            {dps2: 'Arms'},
+            {healer: 'Mistweaver'}]
+    },
+]
 
 
 class TheVsForm extends React.Component {
@@ -149,7 +223,8 @@ class TheVsForm extends React.Component {
         super(props)
         this.state = {
 		 classDmgModules,
-		 classHealerModules
+		 classHealerModules,
+		 teamCompAuto
         }
     }
 
@@ -163,26 +238,44 @@ class TheVsForm extends React.Component {
 		event.preventDefault();
 		if ((thing === true || thing === null)){
 			const { target: {value}} = event;
-			this.setState({ isMenuOpen: false, dmg: value });   // character: value
+			this.setState({ isMenuOpen: false, character: value });   // character: value
 			}
 		}
+		
+/*
+TODO:
+1. get autofill functionallity
+	call componentDidUpdate  or whatever it's depricated to
+	pass in parameters		//prevstate, prevprops
+	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)
+
+2. set limits on healer selections
+
+*/
+	componentDidUpdate(prevState, prevProps) {
+		if (this.props.TeamComp === "Cupid Cleave" ) {
+			console.log(`update ${this.state}`)
+			this.fetchData(this.props.teamCompAuto);
+		}
+	}
 	
     render(){
 		const { name } = this.props;
-		const { dmg, healer } = this.state;
-		//const {character} = this.state;
+		//const { dmg, healer } = this.state;
+		const {character} = this.state;
         const menuOptions = {
             isOpen: this.state.isMenuOpen,
             close: this.close,
-            toggle: <button type="button" onClick={this.toggle}>{dmg ? dmg : name }</button>, //{character ? character : name}
+            toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, //{character ? character : name}
 			align: 'right'
 		};
 		const menuOptions2 = {
             isOpen: this.state.isMenuOpen,
             close: this.close,
-            toggle: <button type="button" onClick={this.toggle}>{healer ? healer : name }</button>, //{character ? character : name}
+            toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, //{character ? character : name}
 			align: 'right'
-        };
+		};
+		
 
 		return(
 			<>
@@ -211,8 +304,8 @@ class TheVsForm extends React.Component {
 	} )}                            
             </DropdownMenu>
             </>
-        )
-    }
+		)
+	}
 	
 }
 

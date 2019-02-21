@@ -1,22 +1,24 @@
-.button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+/* .button2:hover {
+    box-shadow: 0px 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   } 
 
 
 .winButton {
     background-color: #D4AF37;
+    background-size: 50%;
     color: black;
     font-size: 42px;
     display: inline-block;
-    padding: 15px 32px;
+    padding: 15px;
 }
 
 .lossButton {
     background-color: red;
+    background-size: 100%;
     color: black;
     font-size: 42px;
     display: inline-block;
-    padding: 15px 32px;
+    padding: 15px;
 
-}
+} */
 

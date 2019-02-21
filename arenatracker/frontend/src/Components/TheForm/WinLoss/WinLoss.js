@@ -5,19 +5,25 @@ import styled from 'styled-components';
 const ButtonWin = styled.button`
     background-color: #D4AF37;
     color: black;
-    font-size: 42px;
+    font-size: 40px;
+    font-family: 'Metal Mania', cursive;
     display: inline-block;
     padding: 15px 32px;
+
+    &:hover { background: #FFDF00;}
     
 `;
 
 
 const ButtonLoss = styled.button`
-    background-color: #C21807;
+    background-color: #8B0000;
     color: black;
-    font-size: 43px;
+    font-size: 40px;
+    font-family: 'Metal Mania', cursive;
     display: inline-block;
     padding: 15px 32px;
+    
+    &:hover { background: #C21807;}
 `;
     
 
@@ -46,7 +52,7 @@ class WinLoss extends React.Component {
         return(
             <form onSubmit={this.handleSubmit}>
                 <br></br>
-                <ButtonWin onClick={this.handleSubmit} name="winButton">W</ButtonWin>
+                <ButtonWin  onClick={this.handleSubmit} name="winButton">W</ButtonWin>
                 <ButtonLoss onClick={this.handleSubmit} name="lossButton">L</ButtonLoss>
             </form>
         )
