@@ -5,10 +5,10 @@ import styled from 'styled-components';
 const ButtonWin = styled.button`
     background-color: #D4AF37;
     color: black;
-    font-size: 40px;
+    font-size: 50px;
     font-family: 'Metal Mania', cursive;
     display: inline-block;
-    padding: 15px 32px;
+    padding: 15px 30px;
 
     &:hover { background: #FFDF00;}
     
@@ -18,10 +18,10 @@ const ButtonWin = styled.button`
 const ButtonLoss = styled.button`
     background-color: #8B0000;
     color: black;
-    font-size: 40px;
+    font-size: 50px;
     font-family: 'Metal Mania', cursive;
     display: inline-block;
-    padding: 15px 32px;
+    padding: 15px 34px;
     
     &:hover { background: #C21807;}
 `;
