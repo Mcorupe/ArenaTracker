@@ -224,77 +224,87 @@ class TheVsForm extends React.Component {
         this.state = {
 		 classDmgModules,
 		 classHealerModules,
-		 teamCompAuto
+		 teamCompAuto,
+		 
         }
     }
-
-    toggle = () => {
-			this.setState({ isMenuOpen: !this.state.isMenuOpen });
-		}
-		
-     
-    close = (event) => {
-		const thing = event.target.getAttribute('data-canclick');
-		event.preventDefault();
-		if ((thing === true || thing === null)){
-			const { target: {value}} = event;
-			this.setState({ isMenuOpen: false, character: value });   // character: value
-			}
-		}
 		
 /*
 TODO:
 1. get autofill functionallity
 	call componentDidUpdate  or whatever it's depricated to
 	pass in parameters		//prevstate, prevprops
-	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)
+	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)      //leaves undefined 
 
 2. set limits on healer selections
 
 */
-	componentDidUpdate(prevState, prevProps) {
-		if (this.props.TeamComp === "Cupid Cleave" ) {
-			console.log(`update ${this.state}`)
-			this.fetchData(this.props.teamCompAuto);
+componentDidUpdate(prevState, prevProps) {
+	if (this.props.TeamComp === "Cupid Cleave") {			//fucka youa updatea
+		console.log(`prevProps: ${prevProps}`)
+		this.fetchData(this.state.teamCompAuto);
+	}
+}
+
+// shouldComponentUpdate(nextProps, nexState) {       //cuz why not lets just throw more shit at the wall till something sticks
+// 	return nextProps.TeamComp				//needs to return false
+// }
+
+
+
+
+toggle = () => {
+		this.setState({ isMenuOpen: !this.state.isMenuOpen });
+	}
+		
+     
+ close = (event) => {
+	const thing = event.target.getAttribute('data-canclick');
+	event.preventDefault();
+	if ((thing === true || thing === null)){
+		const { target: {value}} = event;
+		this.setState({ isMenuOpen: false, character: value });   // character: value
 		}
 	}
+
+
 	
-    render(){
-		const { name } = this.props;
-		//const { dmg, healer } = this.state;
-		const {character} = this.state;
-        const menuOptions = {
-            isOpen: this.state.isMenuOpen,
-            close: this.close,
-            toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, //{character ? character : name}
-			align: 'right'
-		};
-		const menuOptions2 = {
-            isOpen: this.state.isMenuOpen,
-            close: this.close,
-            toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, //{character ? character : name}
-			align: 'right'
-		};
+render(){
+	const { name } = this.props;
+	//const { dmg, healer } = this.state;
+	const {character} = this.state;
+    const menuOptions = {
+        isOpen: this.state.isMenuOpen,
+        close: this.close,
+        toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, //{character ? character : name}
+		align: 'right'
+	};
+	const menuOptions2 = {
+        isOpen: this.state.isMenuOpen,
+        close: this.close,
+        toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, //{character ? character : name}
+		align: 'right'
+	};
 		
 
-		return(
-			<>
-            <DropdownMenu  {...menuOptions}>
-				{classDmgModules.map(specs => {
-					const nestedProps1 = {
-						toggle: <button onClick={this.close} name={name} data-canclick={specs.theDontClick} value={specs.key}>{specs.key}</button>,
-						animate: false,
-						leaveTimeout: 1,
-						delay: 1,
-					};
+	return(
+		<>
+        <DropdownMenu  {...menuOptions}>
+			{classDmgModules.map(specs => {
+				const nestedProps1 = {
+					toggle: <button onClick={this.close} name={name} data-canclick={specs.theDontClick} value={specs.key}>{specs.key}</button>,
+					animate: false,
+					leaveTimeout: 1,
+					delay: 1,
+			};
 					
+		return (
+			<>
+			<NestedDropdownMenu {...nestedProps1}>
+        		{specs.modules.map(modules=>{
 					return (
-						<>
-		<NestedDropdownMenu {...nestedProps1}>
-        {specs.modules.map(modules=>{
-			return (
-				<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
-				)})}
+						<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
+			)})}
 
 			</NestedDropdownMenu>
 			
@@ -302,29 +312,62 @@ TODO:
 		
 		)
 	} )}                            
-            </DropdownMenu>
-            </>
+        </DropdownMenu>
+        </>
+
+		
+
+
+
+
+
 		)
+	// FUuuuuuuuUuuuuUUUUuuuuUuuuuuHHHhhhHHHHHhH
+	//
+	//
+	//
+	// UUUuuUUUuCCCKKKKKKKKKKKKKK
+	//
+	// 	return(
+	// 		<>
+    //         <DropdownMenu  {...menuOptions2}>
+	// 			{classHealerModules.map(specs => {
+	// 				const nestedProps2 = {
+	// 					toggle: <button onClick={this.close} name={name} data-canclick={specs.theDontClick} value={specs.key}>{specs.key}</button>,
+	// 					animate: false,
+	// 					leaveTimeout: 1,
+	// 					delay: 1,
+	// 				};
+					
+	// 				return (
+	// 					<>
+	// 	<NestedDropdownMenu {...nestedProps2}>
+    //     {specs.modules.map(modules=>{
+	// 		return (
+	// 			<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
+	// 			)})}
+
+	// 		</NestedDropdownMenu>
+			
+	// 		</>
+		
+	// 	)
+	// } )}                            
+    //         </DropdownMenu>
+    //         </>
+	// 	)	
+		
+
+
+
+
+
+
+
+
 	}
 	
 }
 
-// {classHealerModules.map(specs => {
-// 	const nestedProps2 = {
-// 		toggle: <button onClick={this.close} name={name} data-canclick={specs.theDontClick} value={specs.key}>{specs.key}</button>,
-// 		animate: false,
-// 		leaveTimeout: 1,
-// 		delay: 1,
-// 	}
-// })}
-
-// <NestedDropdownMenu {...nestedProps2}>
-// {specs.modules.map(modules=>{
-//    return (
-//    <li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
-//    )})}
-
-//    </NestedDropdownMenu> 
-  
 
 export default TheVsForm;

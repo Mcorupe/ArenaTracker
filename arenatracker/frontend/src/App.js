@@ -46,25 +46,25 @@ handleSubmit(event) {
 render() {
    return (
      <div className="App">
-      <label>__________________________________________________________</label>
-       <TheVsForm onSubmit={this.handleSubmit}>   {/*do i need this submit?*/}
-       </TheVsForm>
-      <label>__________________________________________________________</label>
-       <WinLoss onSubmit={this.handleSubmit}>    {/*this one i know i'll need?*/}
+      <label>_____________________________________________</label>
+       <TheVsForm onSubmit={this.handleSubmit}>      
+      </TheVsForm>
+      <label>_____________________________________________</label>
+       <WinLoss onSubmit={this.handleSubmit}>    
        </WinLoss>
-      <label>__________________________________________________________</label>
+      <label>_____________________________________________</label>
        <TheUsForm onSubmit={this.handleSubmit}>    
        </TheUsForm>
-      <label>__________________________________________________________</label>
-       <TheThemForm onSubmit={this.handleSubmit}>   {/*do i need this submit?*/}
+      <label>_____________________________________________</label>
+       <TheThemForm onSubmit={this.handleSubmit}>       
        </TheThemForm>
-      <label>__________________________________________________________</label>
+      <label>_____________________________________________</label>
        <PopularChoice>
        </PopularChoice>
-      <label>__________________________________________________________</label>       
+      <label>_____________________________________________</label>       
        <Percentages>
        </Percentages>
-      <label>__________________________________________________________</label>
+      <label>_____________________________________________</label>
      </div> 
     );
   }

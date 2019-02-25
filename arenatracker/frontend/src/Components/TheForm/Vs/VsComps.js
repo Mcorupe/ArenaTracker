@@ -118,12 +118,12 @@ class TheVsForm extends React.Component {
         }
       }
 
-    // autofill = (event) => {
-    //     const {teamCompAuto: {key, modules}} = event;
-    //     const {dps1, dps2, healer} = this.state;
-    //     event.preventDefault();
-    //     this.setState({ [key]:modules});
-    // }
+    autofill = (event) => {
+        const {teamCompAuto: {key, modules}} = event;
+        const {dps1, dps2, healer} = this.state;
+        event.preventDefault();
+        this.setState({ [key]:modules});
+    }
 
     render(){
         const { teamComp, enemyComp } = this.state;
@@ -132,12 +132,14 @@ class TheVsForm extends React.Component {
             close: this.close,
             toggle: <button type="button" name="teamCompOpen" onClick={this.toggle}>{teamComp}</button>,
             align: 'right',
+            closeOnOutsideClick: true,
         }
         const menuOptions2 = {
             isOpen: this.state.enemyCompOpen,
             close: this.close,
             toggle: <button type="button" name="enemyCompOpen" onClick={this.toggle}>{enemyComp}</button>,
-            align: 'right'
+            align: 'right',
+            closeOnOutsideClick: true,
         }
         return(
             <form onSubmit={this.handleSubmit}>
@@ -162,13 +164,13 @@ class TheVsForm extends React.Component {
             <br></br>
             <br></br>
             {/* pass in teampcomp/enemycomp as a prop */}
-            <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Dps"/>  
-            <VsRoles autofill={teamCompAuto} name="Dps"/>
-            <VsRoles autofill={teamCompAuto} name="Healer"/>
+            <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Dmg"/>  
+            <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Dmg"/>
+            <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Healer"/>
             <label>
             <br></br>
             <br></br>
-            <i>----------------------------------------   VS  -----------------------------------------</i></label>
+            <i>   VS  </i></label>
             <br/>
             <br></br>
         
@@ -192,8 +194,8 @@ class TheVsForm extends React.Component {
                 </div>
             <br></br>
             <br></br>
-            <VsRoles autofill={enemyComp} name="Dps"/>
-            <VsRoles autofill={enemyComp} name="Dps"/>
+            <VsRoles autofill={enemyComp} name="Dmg"/>
+            <VsRoles autofill={enemyComp} name="Dmg"/>
             <VsRoles autofill={enemyComp} name="Healer"/>
             </form>
         )
