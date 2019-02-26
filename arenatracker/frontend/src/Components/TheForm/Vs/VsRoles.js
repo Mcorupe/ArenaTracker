@@ -12,40 +12,7 @@ TODO:
 
 */
 
-const classHealerModules = [
-	{
-	key: 'Druid',
-		theDontClick: false,
-		color: '#FF7D0A',
-		modules: [
-			{key: 'Restoration'}]
-	}, {
-		key: 'Monk',
-		theDontClick: false,
-		color: '#00FF96',
-		modules: [
-			{key: 'Mistweaver'}]
-	}, {
-		key: 'Paladin',
-		theDontClick: false,
-		color: '#F58CBA',
-		modules: [
-			{key: 'Holy'}]
-	},  {
-		key: 'Priest',
-		theDontClick: false,
-		color: '#FFFFFF',
-		modules: [
-			{key: 'Discipline'},
-			{key: 'Holy'}]
-	}, {
-		key: 'Shaman',
-		theDontClick: false,
-		color: '#0070DE',
-		modules: [
-			{key: 'Restoration'}]
-	}
-]
+
 const classDmgModules = [
     {
 		key: 'Death Knight',
@@ -222,7 +189,6 @@ class TheVsForm extends React.Component {
         super(props)
         this.state = {
 		 classDmgModules,
-		 classHealerModules,
 		 teamCompAuto,
 		 
         }
@@ -262,7 +228,7 @@ toggle = () => {
 	event.preventDefault();
 	if ((thing === true || thing === null)){
 		const { target: {value}} = event;
-		this.setState({ isMenuOpen: false, character: value });   // character: value
+		this.setState({ isMenuOpen: false, character: value }); 
 		}
 	}
 
@@ -270,20 +236,14 @@ toggle = () => {
 	
 render(){
 	const { name } = this.props;
-	//const { dmg, healer } = this.state;
 	const {character} = this.state;
     const menuOptions = {
         isOpen: this.state.isMenuOpen,
         close: this.close,
-        toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, //{character ? character : name}
+        toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, 
 		align: 'right'
 	};
-	const menuOptions2 = {
-        isOpen: this.state.isMenuOpen,
-        close: this.close,
-        toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, //{character ? character : name}
-		align: 'right'
-	};
+	
 		
 
 	return(
@@ -313,58 +273,7 @@ render(){
 	} )}                            
         </DropdownMenu>
         </>
-		
-
-
-
-
-		
-		)
-	// Healer module, keeps getting unreachable when i plug this crap in
-	//FUuuuuuuuUuuuuUUUUuuuuUuuuuuHHHhhhHHHHHhH
-	//
-	//
-	//
-	// UUUuuUUUuCCCKKKKKKKKKKKKKK
-	//
-		// return(
-		// 	<>
-        //     <DropdownMenu  {...menuOptions2}>
-		// 		{classHealerModules.map(specs => {
-		// 			const nestedProps2 = {
-		// 				toggle: <button onClick={this.close} name={name} data-canclick={specs.theDontClick} value={specs.key}>{specs.key}</button>,
-		// 				animate: false,
-		// 				leaveTimeout: 1,
-		// 				delay: 1,
-		// 			};
-					
-	// 				return (
-	// 					<>
-	// 	<NestedDropdownMenu {...nestedProps2}>
-    //     {specs.modules.map(modules=>{
-	// 		return (
-	// 			<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
-	// 			)})}
-
-	// 		</NestedDropdownMenu>
-			
-	// 		</>
-		
-	// 	)
-	// } )}                            
-    //         </DropdownMenu>
-    //         </>
-	// 	)	
-		
-
-
-
-
-
-
-
-
-	}
+	)}
 	
 }
 

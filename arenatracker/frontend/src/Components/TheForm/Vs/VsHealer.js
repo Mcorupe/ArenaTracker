@@ -9,8 +9,6 @@ TODO:
 	pass in parameters		//prevstate, prevprops
 	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)
 
-2. set limits on healer selections
-
 */
 
 const classHealerModules = [
@@ -141,7 +139,7 @@ TODO:
 	pass in parameters		//prevstate, prevprops
 	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)      //leaves undefined 
 
-2. set limits on healer selections
+
 
 */
 componentDidUpdate(prevState, prevProps) {
@@ -178,16 +176,11 @@ render(){
 	const { name } = this.props;
 	//const { dmg, healer } = this.state;
 	const {character} = this.state;
-    const menuOptions = {
-        isOpen: this.state.isMenuOpen,
-        close: this.close,
-        toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, //{character ? character : name}
-		align: 'right'
-	};
+    
 	const menuOptions2 = {
         isOpen: this.state.isMenuOpen,
         close: this.close,
-        toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, //{character ? character : name}
+        toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, 
 		align: 'right'
 	};
 		

@@ -197,7 +197,7 @@ class TheVsForm extends React.Component {
             <br></br>
             <VsRoles autofill={enemyComp} name="Dmg"/>
             <VsRoles autofill={enemyComp} name="Dmg"/>
-            <VsRoles autofill={enemyComp} name="Healer"/>
+            <VsHealer autofill={enemyComp} name="Healer"/>
             </form>
         )
     }
