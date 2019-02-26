@@ -1,6 +1,7 @@
 import React from 'react';
 import DropdownMenu from 'react-dd-menu';
 import VsRoles from "./VsRoles";
+import VsHealer from "./VsHealer";
 
 
 const teamCompAuto = [
@@ -166,7 +167,7 @@ class TheVsForm extends React.Component {
             {/* pass in teampcomp/enemycomp as a prop */}
             <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Dmg"/>  
             <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Dmg"/>
-            <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Healer"/>
+            <VsHealer autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Healer"/>
             <label>
             <br></br>
             <br></br>

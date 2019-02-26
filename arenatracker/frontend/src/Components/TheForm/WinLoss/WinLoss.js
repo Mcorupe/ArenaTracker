@@ -18,7 +18,6 @@ const ButtonWin = styled.button`
     
 `;
 
-
 const ButtonLoss = styled.button`
     background-color: #8B0000;
     border: 2px solid grey;
