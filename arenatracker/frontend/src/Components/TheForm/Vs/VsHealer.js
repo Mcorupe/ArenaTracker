@@ -17,7 +17,7 @@ const classHealerModules = [
 		theDontClick: false,
 		color: '#FF7D0A',
 		modules: [
-			{key: 'Restoration'}]
+			{key: 'Restoration Druid'}]
 	}, {
 		key: 'Monk',
 		theDontClick: false,
@@ -29,20 +29,20 @@ const classHealerModules = [
 		theDontClick: false,
 		color: '#F58CBA',
 		modules: [
-			{key: 'Holy'}]
+			{key: 'Holy Paladin'}]
 	},  {
 		key: 'Priest',
 		theDontClick: false,
 		color: '#FFFFFF',
 		modules: [
 			{key: 'Discipline'},
-			{key: 'Holy'}]
+			{key: 'Holy Priest'}]
 	}, {
 		key: 'Shaman',
 		theDontClick: false,
 		color: '#0070DE',
 		modules: [
-			{key: 'Restoration'}]
+			{key: 'Restoration Shaman'}]
 	}
 ]
 const teamCompAuto = [
