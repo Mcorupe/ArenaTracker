@@ -46,25 +46,28 @@ handleSubmit(event) {
 render() {
    return (
      <div className="App">
-      <label>_____________________________________________</label>
-       <TheVsForm onSubmit={this.handleSubmit}>      
-      </TheVsForm>
-      <label>_____________________________________________</label>
-       <WinLoss onSubmit={this.handleSubmit}>    
-       </WinLoss>
-      <label>_____________________________________________</label>
-       <TheUsForm onSubmit={this.handleSubmit}>    
-       </TheUsForm>
-      <label>_____________________________________________</label>
-       <TheThemForm onSubmit={this.handleSubmit}>       
-       </TheThemForm>
-      <label>_____________________________________________</label>
-       <PopularChoice>
-       </PopularChoice>
-      <label>_____________________________________________</label>       
-       <Percentages>
-       </Percentages>
-      <label>_____________________________________________</label>
+        <div className="backgroundLeft">
+          <div className="backgroundRight">
+            <TheVsForm onSubmit={this.handleSubmit}>      
+            </TheVsForm>
+            <hr width="30%"></hr>
+            <WinLoss onSubmit={this.handleSubmit}>    
+            </WinLoss>
+            <hr width="30%"></hr>
+            <TheUsForm onSubmit={this.handleSubmit}>    
+            </TheUsForm>
+            <hr width="30%"></hr>
+            <TheThemForm onSubmit={this.handleSubmit}>       
+            </TheThemForm>
+            <hr width="30%"></hr>
+            <PopularChoice>
+            </PopularChoice>
+            <hr width="30%"></hr>    
+            <Percentages>
+            </Percentages>
+            <hr width="30%"></hr>
+          </div>
+        </div>
      </div> 
     );
   }
@@ -73,17 +76,6 @@ render() {
 export default App;
 
 
-// const theBackground = styled.div`
-//     background-image: background;
-//     border: 1px solid #000;
-//     background-size: 100%;
-//     background-position: 'center';
-//     background-repeat: 'no-repeat';
-//     `;
-    
-    
-    // width: 200px;
-    // height: 200px;
 
  
 // <ThemeContext.Provider value={themeChange}>

@@ -1,19 +1,76 @@
 
- 
 .App {
-    /* padding-bottom: 10%; */
-    /* margin: 0; */
+  text-align: center;
+  font: white;
+  font-family: "New Rocker";
+  font-size: 100%;
+  background: #444444;
+  background-image: url('./Images/Images/background.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  
+} 
+
+
+ 
+  .background {
+    width: 100%;
+    height: 100%;
+    background: #444444;
+    background-size: auto;
+    margin: 0;
+    position: center;
+    z-index: 1;
     text-align: center;
-    font: white;
-    font-family: "New Rocker";
-    font-size: 100%;
-    background: #5C5C5C;
-    background-image: url('./Images/Images/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    font-family: 'New Rocker';
+    color: ivory;
+    font-size: 21px;
+		-webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.125);
     
-    /* margin: 100; */
-    /* overflow: hidden; */
+  }
+
+  .backgroundLeft {
+    background-image: url('./Images/Images/backgroundLeft.jpg') no-repeat;
+    margin-left: 20px;
+    background-position: left;
+    background-size: auto;
+    z-index: 2;
     
-    
+  }
+
+  .backgroundRight {
+    background-image: url('./Images/Images/backgroundRight.jpg') no-repeat;
+    margin-right: 20px;
+    background-position: right;
+    background-size: auto;
+    z-index: 2;
+  }
+
+  hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
   } 
+
+  /*text for large labels*/
+  text {
+    text-align: center;
+    font-family: 'New Rocker';
+    color: ivory;
+    font-size: 40px;
+
+  }
+
+/*
+  label {
+    text-align: center;
+    font-family: 'New Rocker';
+    color: ivory;
+    font-size: 20px;
+  } 
+*/

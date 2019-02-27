@@ -278,15 +278,22 @@
     margin: 0 0 0.5em;
   }
   /* line 25, ../src/scss/_dd-menu.scss */
+  /* ------------------------------------this one is in use-----------------------------------*/
+  /* ------------------------------------this one is in use-----------------------------------*/
+  /* ------------------------------------this one is in use-----------------------------------*/
+  /* ------------------------------------this one is in use-----------------------------------*/
   .dd-menu .dd-menu-items ul, .dd-menu .dd-menu-items ol {
     list-style: none;
     padding: 0;
     margin: 0;
     color: #000;
-    text-shadow: #870A0A;                               /*  -----------trying to outline the text with black----------------*/
-    background-color: #fefefe;                          /* <-----------this one changes the background color----------------*/
+    text-shadow: #870A0A;                              
+    background-color: #fefefe;                         
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.29);
   }
+/* ------------------------------------this one is in use-----------------------------------*/
+/* ------------------------------------this one is in use-----------------------------------*/
+/* ------------------------------------this one is in use-----------------------------------*/
   /* line 34, ../src/scss/_dd-menu.scss */
   .dd-menu .dd-menu-items ul.dd-items-right li > *, .dd-menu .dd-menu-items ol.dd-items-right li > * {
     text-align: right;

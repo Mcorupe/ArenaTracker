@@ -215,7 +215,7 @@ render(){
     return(
         <form onSubmit={this.handleSubmit}>
         <br></br>
-        <label><b>US</b></label>
+        <label> US </label>
         <br></br>
         <br></br>
         <label>Kill Target</label>

@@ -4,6 +4,7 @@ import VsRoles from "./VsRoles";
 import VsHealer from "./VsHealer";
 
 
+
 const teamCompAuto = [
     {
 		key: 'Cupid Cleave',
@@ -168,10 +169,9 @@ class TheVsForm extends React.Component {
             <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Dmg"/>  
             <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Dmg"/>
             <VsHealer autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Healer"/>
-            <label>
             <br></br>
             <br></br>
-            <i>   VS  </i></label>
+            <text>   VS  </text>
             <br/>
             <br></br>
         
