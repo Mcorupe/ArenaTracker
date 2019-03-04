@@ -45,27 +45,27 @@ handleSubmit(event) {
 
 render() {
    return (
-     <div className="App">
+     <div className="background">
         <div className="backgroundLeft">
           <div className="backgroundRight">
             <TheVsForm onSubmit={this.handleSubmit}>      
             </TheVsForm>
-            <hr width="30%"></hr>
+            <hr width="20%"></hr>
             <WinLoss onSubmit={this.handleSubmit}>    
             </WinLoss>
-            <hr width="30%"></hr>
+            <hr width="20%"></hr>
             <TheUsForm onSubmit={this.handleSubmit}>    
             </TheUsForm>
-            <hr width="30%"></hr>
+            <hr width="20%"></hr>
             <TheThemForm onSubmit={this.handleSubmit}>       
             </TheThemForm>
-            <hr width="30%"></hr>
+            <hr width="20%"></hr>
             <PopularChoice>
             </PopularChoice>
-            <hr width="30%"></hr>    
+            <hr width="20%"></hr>    
             <Percentages>
             </Percentages>
-            <hr width="30%"></hr>
+            <hr width="20%"></hr>
           </div>
         </div>
      </div> 

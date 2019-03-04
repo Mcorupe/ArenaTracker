@@ -1,4 +1,4 @@
-
+/* 
 .App {
   text-align: center;
   font: white;
@@ -9,18 +9,14 @@
   background-size: cover; 
   background-repeat: no-repeat;
   
-} 
-
-
+}  */
  
   .background {
-    width: 100%;
-    height: 100%;
-    background: #444444;
-    background-size: auto;
+    
+    background: #383838;
+    background-size: 100%;
     margin: 0;
     position: center;
-    z-index: 1;
     text-align: center;
     font-family: 'New Rocker';
     color: ivory;
@@ -31,20 +27,16 @@
   }
 
   .backgroundLeft {
-    background-image: url('./Images/Images/backgroundLeft.jpg') no-repeat;
-    margin-left: 20px;
+    background: url('./Images/Images/backgroundLeft.jpg') no-repeat;
     background-position: left;
-    background-size: auto;
-    z-index: 2;
+    background-size: 40% 100%;
     
   }
 
   .backgroundRight {
-    background-image: url('./Images/Images/backgroundRight.jpg') no-repeat;
-    margin-right: 20px;
+    background: url('./Images/Images/backgroundRight.jpg') no-repeat;
     background-position: right;
-    background-size: auto;
-    z-index: 2;
+    background-size: 40% 100%;
   }
 
   hr { 
