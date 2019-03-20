@@ -140,7 +140,6 @@ TODO:
 	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)      //leaves undefined 
 
 
-
 */
 componentDidUpdate(prevState, prevProps) {
 	if (this.props.TeamComp === "Cupid Cleave") {			//fucka youa updatea
@@ -149,11 +148,9 @@ componentDidUpdate(prevState, prevProps) {
 	}
 }
 
-// shouldComponentUpdate(nextProps, nexState) {       //cuz why not lets just throw more shit at the wall till something sticks
+// shouldComponentUpdate(nextProps, nextState) {       //cuz why not lets just throw more shit at the wall till something sticks
 // 	return nextProps.TeamComp				//needs to return false
 // }
-
-
 
 
 toggle = () => {
@@ -196,12 +193,12 @@ render(){
 					delay: 1,
 			};
 					
-		return (
-			<>
-			<NestedDropdownMenu {...nestedProps2}>
-        		{specs.modules.map(modules=>{
-					return (
-						<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
+	return (
+		<>
+		<NestedDropdownMenu {...nestedProps2}>
+        	{specs.modules.map(modules=>{
+				return (
+					<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
 			)})}
 
 			</NestedDropdownMenu>
@@ -212,59 +209,8 @@ render(){
 	} )}                            
         </DropdownMenu>
         </>
-		
-
-
-
-
-		
 		)
-	// Healer module, keeps getting unreachable when i plug this crap in
-	//FUuuuuuuuUuuuuUUUUuuuuUuuuuuHHHhhhHHHHHhH
-	//
-	//
-	//
-	// UUUuuUUUuCCCKKKKKKKKKKKKKK
-	//
-		// return(
-		// 	<>
-        //     <DropdownMenu  {...menuOptions2}>
-		// 		{classHealerModules.map(specs => {
-		// 			const nestedProps2 = {
-		// 				toggle: <button onClick={this.close} name={name} data-canclick={specs.theDontClick} value={specs.key}>{specs.key}</button>,
-		// 				animate: false,
-		// 				leaveTimeout: 1,
-		// 				delay: 1,
-		// 			};
-					
-	// 				return (
-	// 					<>
-	// 	<NestedDropdownMenu {...nestedProps2}>
-    //     {specs.modules.map(modules=>{
-	// 		return (
-	// 			<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
-	// 			)})}
-
-	// 		</NestedDropdownMenu>
-			
-	// 		</>
-		
-	// 	)
-	// } )}                            
-    //         </DropdownMenu>
-    //         </>
-	// 	)	
-		
-
-
-
-
-
-
-
-
 	}
-	
 }
 
 

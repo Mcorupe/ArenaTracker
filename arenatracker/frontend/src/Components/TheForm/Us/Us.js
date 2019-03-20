@@ -10,8 +10,6 @@ import './ddMenu.css';
 5. [] make KillTarget list dynamic,
  only allow options from Dps/Dps/Healer to be selections
 
-
-
 */
 const classSpecModules = [
     {
@@ -135,8 +133,7 @@ class TheUsForm extends React.Component {
 toggle = () => {
     this.setState({ isMenuOpen: !this.state.isMenuOpen });
   }
-    
- 
+     
 close = (event) => {
     const thing = event.target.getAttribute('data-canclick');
     event.preventDefault();
@@ -145,67 +142,6 @@ close = (event) => {
         this.setState({ isMenuOpen: false, character: value });   // character: value
         }
     }
-
-
-
-//     render(){
-// 		const { name } = this.props;
-// 		const {character} = this.state;
-//         const menuOptions = {
-//             isOpen: this.state.isMenuOpen,
-//             close: this.close,
-//             toggle: <button type="button" onClick={this.toggle}>{character ? character : name}</button>, //{character ? character : name}
-// 			align: 'right'
-// 		};
-// 		const menuOptions2 = {
-//             isOpen: this.state.isMenuOpen,
-//             close: this.close,
-//             toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, //{character ? character : name}
-// 			align: 'right'
-//         };
-
-// 		return(
-// 			<>
-//             <DropdownMenu  {...menuOptions}>
-// 				{classSpecModules.map(specs => {
-// 					const nestedProps1 = {
-// 						toggle: <button onClick={this.close} name={name} data-canclick={specs.theDontClick} value={specs.key}>{specs.key}</button>,
-// 						animate: false,
-// 						leaveTimeout: 1,
-// 						delay: 1,
-// 					};
-					
-// 					return (
-// 						<>
-// 		<NestedDropdownMenu {...nestedProps1}>
-//         {specs.modules.map(modules=>{
-// 			return (
-// 				<li><button onClick={this.close} name={name} value={modules.key}>{modules.key}</button></li>
-// 				)})}
-
-// 			</NestedDropdownMenu>
-			
-// 			</>
-		
-// 		)
-// 	} )}                            
-//             </DropdownMenu>
-//             </>
-//         )
-
-       
-//     }
-    
-    
-    
-// }
-
-
-
-
-
-
-
 
 
 
