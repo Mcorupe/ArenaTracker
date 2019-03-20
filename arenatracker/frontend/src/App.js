@@ -44,7 +44,7 @@ handleSubmit(event) {
 
 
 render() {
-   return (
+   return (    //so maybe i should have used a component. <Wallpaper> or something for styling and wrapped everything. or done like a style sheet thing.
      <div className="background">
         <div className="backgroundLeft">
           <div className="backgroundRight">
