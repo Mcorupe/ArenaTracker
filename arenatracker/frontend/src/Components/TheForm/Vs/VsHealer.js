@@ -2,14 +2,6 @@ import React from 'react';
 import DropdownMenu , { NestedDropdownMenu } from 'react-dd-menu';
 import './ddMenu.css';
 
-/*
-TODO:
-1. get autofill functionallity
-	call componentDidUpdate  or whatever it's depricated to
-	pass in parameters		//prevstate, prevprops
-	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)
-
-*/
 
 const classHealerModules = [
 	{
@@ -138,9 +130,8 @@ TODO:
 	call componentDidUpdate  or whatever it's depricated to
 	pass in parameters		//prevstate, prevprops
 	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)      //leaves undefined 
-
-
 */
+
 componentDidUpdate(prevState, prevProps) {
 	if (this.props.TeamComp === "Cupid Cleave") {			//fucka youa updatea
 		console.log(`prevProps: ${prevProps}`)
@@ -148,9 +139,6 @@ componentDidUpdate(prevState, prevProps) {
 	}
 }
 
-// shouldComponentUpdate(nextProps, nextState) {       //cuz why not lets just throw more shit at the wall till something sticks
-// 	return nextProps.TeamComp				//needs to return false
-// }
 
 
 toggle = () => {

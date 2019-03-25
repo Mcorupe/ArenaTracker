@@ -88,7 +88,7 @@ class TheVsForm extends React.Component {
         this.state = {
          enemyComp: "Enemy Comp",
          teamComp: "Team Comp",
-         teamCompAuto: [],
+         teamCompAuto,
          enemyCompOpen: false,
          teamCompOpen: false,
         }
@@ -135,6 +135,7 @@ class TheVsForm extends React.Component {
             toggle: <button type="button" name="teamCompOpen" onClick={this.toggle}>{teamComp}</button>,
             align: 'right',
             closeOnOutsideClick: true,
+
         }
         const menuOptions2 = {
             isOpen: this.state.enemyCompOpen,

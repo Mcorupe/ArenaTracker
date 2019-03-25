@@ -2,15 +2,6 @@ import React from 'react';
 import DropdownMenu , { NestedDropdownMenu } from 'react-dd-menu';
 import './ddMenu.css';
 
-/*
-TODO:
-1. get autofill functionallity
-	call componentDidUpdate  or whatever it's depricated to
-	pass in parameters		//prevstate, prevprops
-	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)
-
-
-*/
 
 
 const classDmgModules = [
@@ -196,26 +187,31 @@ class TheVsForm extends React.Component {
 		
 /*
 TODO:
-1. get autofill functionallity
+1. [] get autofill functionallity
 	call componentDidUpdate  or whatever it's depricated to
 	pass in parameters		//prevstate, prevprops
 	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)      //leaves undefined 
 
-2. set limits on healer selections
+2. [X]set limits on healer selections
 
 */
-componentDidUpdate(prevState, prevProps) {
-	if (this.props.TeamComp === "Cupid Cleave") {			//fucka youa updatea
-		console.log(`prevProps: ${prevProps}`)
-		this.fetchData(this.state.teamCompAuto);
-	}
+
+autofill = (event) => {
+	const {teamCompAuto: {key, modules}} = event;
+	const {dps1, dps2, healer} = this.state;
+	event.preventDefault();
+	this.setState({ [key]:modules});
 }
 
-// shouldComponentUpdate(nextProps, nexState) {       //cuz why not lets just throw more shit at the wall till something sticks
-// 	return nextProps.TeamComp				//needs to return false
-// }
-
-
+componentDidUpdate(prevState, prevProps) {
+	if (this.props.teamCompAuto === "Cupid Cleave" ) {			//fucka youa updatea
+		console.log(`prevProps: ${prevProps}`)
+		this.fetchData(this.state.teamCompAuto === "Cupid Cleave" 
+		|| this.props.modules === 'Retribution'
+		&& this.props.modules === 'Survival'
+		&& this.props.modules === 'Discipline'); 
+	}
+}
 
 
 toggle = () => {
@@ -241,7 +237,8 @@ render(){
         isOpen: this.state.isMenuOpen,
         close: this.close,
         toggle: <button type="button" onClick={this.toggle}>{character ? character : name }</button>, 
-		align: 'right'
+		align: 'right',
+		closeOnOutsideClick: true,
 	};
 	
 		

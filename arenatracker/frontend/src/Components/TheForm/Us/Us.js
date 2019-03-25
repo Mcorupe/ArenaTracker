@@ -156,7 +156,7 @@ render(){
         <label>Kill Target</label>
         <br></br>
             <div className="killTarget">
-                <select value={this.state.value1} onChange={this.handleChange}>
+                <select value={this.state.value} onChange={this.handleChange}>
                     <option value="Un-Named">---------</option>
                     <option value="Any">Any</option>
                     <option value={"Death Knight"}>Death Knight</option>

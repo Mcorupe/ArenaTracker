@@ -11,6 +11,7 @@ export default function withAuth(AuthComp) {
         user: null,
         err: null
       };
+      
     }
 
     componentDidMount() {
