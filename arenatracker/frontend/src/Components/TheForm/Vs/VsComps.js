@@ -168,8 +168,8 @@ class TheVsForm extends React.Component {
             <br></br>
             <br></br>
             {/* pass in teampcomp/enemycomp as a prop */}
-            <VsRoles autofill={teamCompAuto.modules} selectedTeamComp={this.state.teamComp} name="Dmg"/>  
-            <VsRoles autofill={teamCompAuto.modules} selectedTeamComp={this.state.teamComp} name="Dmg"/>
+            <VsRoles autofill={teamCompAuto.modules} selectedTeamComp={this.state.teamComp} name="Dps1"/>  
+            <VsRoles autofill={teamCompAuto.modules} selectedTeamComp={this.state.teamComp} name="Dps2"/>
             <VsHealer autofill={teamCompAuto.modules} selectedTeamComp={this.state.teamComp} name="Healer"/>
             <br></br>
             <br></br>
