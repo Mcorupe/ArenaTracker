@@ -1,50 +1,45 @@
- 
-  .background {
-    
-    background: #383838;
-    background-size: 100%;
-    margin: 0;
-    position: center;
-    text-align: center;
-    font-family: 'New Rocker';
-    color: ivory;
-    font-size: 20px;
-		-webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: rgba(0, 0, 0, 0.125);
-    
-  }
+.background {
+  background: #383838;
+  background-size: 100%;
+  margin: 0;
+  position: center;
+  text-align: center;
+  font-family: "New Rocker";
+  color: ivory;
+  font-size: 20px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.125);
+}
 
-  .backgroundLeft {
-    background: url('./Images/Images/backgroundLeft.jpg') no-repeat;
-    background-position: left;
-    background-size: 40% 100%;
-    
-  }
+.backgroundLeft {
+  background: url("./Images/Images/backgroundLeft.jpg") no-repeat;
+  background-position: left;
+  background-size: 40% 100%;
+}
 
-  .backgroundRight {
-    background: url('./Images/Images/backgroundRight.jpg') no-repeat;
-    background-position: right;
-    background-size: 40% 100%;
-  }
+.backgroundRight {
+  background: url("./Images/Images/backgroundRight.jpg") no-repeat;
+  background-position: right;
+  background-size: 40% 100%;
+}
 
-  hr { 
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
-  } 
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
 
-  /*text for large labels*/
-  text {
-    text-align: center;
-    font-family: 'New Rocker';
-    color: ivory;
-    font-size: 40px;
-
-  }
+/*text for large labels*/
+text {
+  text-align: center;
+  font-family: "New Rocker";
+  color: ivory;
+  font-size: 40px;
+}
 
 /*
   label {

@@ -144,7 +144,7 @@ const teamCompAuto = [
   }
 ];
 
-class TheVsForm extends React.Component {
+class TheVsForm extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -176,10 +176,10 @@ TODO:
   shouldComponentUpdate(nextProps, nextState) {
     //console.log(prevState, prevProps);
     if (this.props.selectedteamComp !== nextProps.selectedteamComp) {
-      console.log(this.props, nextProps, 'the if');
+      console.log(this.props, nextProps, "the if");
       return true;
     } else if (this.props.selectedteamComp === nextProps.selectedteamComp) {
-		console.log("WE'RE IN THE ELSE-IF MAN!!!")
+      console.log("WE'RE IN THE ELSE-IF MAN!!!");
       this.autofiller();
       return false;
     } else {
@@ -214,7 +214,7 @@ TODO:
       this.setState({ isMenuOpen: false, character: value });
     }
   };
-  // food === 'pizza' ? 'peporino' : toppings === 0 || toppings === -1 ? 'sorry no toppings': null
+
   render() {
     const { name } = this.props;
     const { character } = this.state;
