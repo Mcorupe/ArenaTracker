@@ -206,7 +206,7 @@ autofill = (event) => {
 componentDidUpdate(prevState, prevProps) {
 	if (this.props.teamCompAuto === "Cupid Cleave" ) {			//fucka youa updatea
 		console.log(`prevProps: ${prevProps}`)
-		this.fetchData(this.state.teamCompAuto === "Cupid Cleave" 
+		this.fetchData(this.state.teamComp === "Cupid Cleave" 
 		|| this.props.modules === 'Retribution'
 		&& this.props.modules === 'Survival'
 		&& this.props.modules === 'Discipline'); 

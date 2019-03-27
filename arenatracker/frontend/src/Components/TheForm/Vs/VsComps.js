@@ -2,6 +2,7 @@ import React from 'react';
 import DropdownMenu from 'react-dd-menu';
 import VsRoles from "./VsRoles";
 import VsHealer from "./VsHealer";
+import AutoFill from "../AutoFill/AutoFill";
 
 
 
@@ -120,12 +121,12 @@ class TheVsForm extends React.Component {
         }
       }
 
-    autofill = (event) => {
-        const {teamCompAuto: {key, modules}} = event;
-        const {dps1, dps2, healer} = this.state;
-        event.preventDefault();
-        this.setState({ [key]:modules});
-    }
+    // autofill = (event) => {
+    //     const {teamCompAuto: {key, modules}} = event;
+    //     const {dps1, dps2, healer} = this.state;
+    //     event.preventDefault();
+    //     this.setState({ [key]:modules});
+    // }
 
     render(){
         const { teamComp, enemyComp } = this.state;
@@ -167,9 +168,9 @@ class TheVsForm extends React.Component {
             <br></br>
             <br></br>
             {/* pass in teampcomp/enemycomp as a prop */}
-            <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Dmg"/>  
-            <VsRoles autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Dmg"/>
-            <VsHealer autofill={teamCompAuto} selectedTeamComp={this.state.teamComp} name="Healer"/>
+            <VsRoles autofill={teamCompAuto.modules} selectedTeamComp={this.state.teamComp} name="Dmg"/>  
+            <VsRoles autofill={teamCompAuto.modules} selectedTeamComp={this.state.teamComp} name="Dmg"/>
+            <VsHealer autofill={teamCompAuto.modules} selectedTeamComp={this.state.teamComp} name="Healer"/>
             <br></br>
             <br></br>
             <text>   VS  </text>
