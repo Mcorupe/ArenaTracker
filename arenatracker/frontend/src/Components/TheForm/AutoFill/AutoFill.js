@@ -75,7 +75,118 @@ const AutoFill = (key, modules) => {
           return "Survival";
         case "Healer":
           return "Discipline";
-      }
+        }
+        break;
+    case "God Comp":
+        switch (modules) {
+          case "Dps1":
+            return "Shadow";
+          case "Dps2":
+            return "Frost";
+          case "Healer":
+            return "Restoration Druid";
+          }
+          break;
+    case "KFC":
+        switch (modules) {
+          case "Dps1":
+            return "Arms";
+          case "Dps2":
+            return "Beast Master";
+          case "Healer":
+            return "Restoration Druid";
+          }
+          break;
+    case "RMP":
+        switch (modules) {
+          case "Dps1":
+            return "Assassin";
+          case "Dps2":
+            return "Frost";
+          case "Healer":
+            return "Discipline";
+          }
+          break;
+    case "LSD":
+        switch (modules) {
+          case "Dps1":
+            return "Destruction";
+          case "Dps2":
+            return "Elemental";
+          case "Healer":
+            return "Restoration Druid";
+          }
+          break;
+    case "LSD2":
+        switch (modules) {
+          case "Dps1":
+            return "Destruction";
+          case "Dps2":
+            return "Balance";
+          case "Healer":
+            return "Restoration Shaman";
+          }
+          break;
+     case "OwlPlay":
+        switch (modules) {
+          case "Dps1":
+            return "Balance";
+          case "Dps2":
+            return "Shadow";
+          case "Healer":
+            return "Restoration Shaman";
+          }
+          break;
+      case "Stormrage":
+        switch (modules) {
+          case "Dps1":
+            return "Vengeance";
+          case "Dps2":
+            return "Balance";
+          case "Healer":
+            return "Restoration Shaman";
+          }
+          break;
+     case "Shatterplay":
+        switch (modules) {
+          case "Dps1":
+            return "Shadow";
+          case "Dps2":
+            return "Frost";
+          case "Healer":
+            return "Restoration Druid";
+          }
+          break;
+    case "Thug Cleave":
+        switch (modules) {
+          case "Dps1":
+            return "Subtlety";
+          case "Dps2":
+            return "Beastmaster";
+          case "Healer":
+          return "Restoration Druid";
+        }
+        break;
+     case "TSG":
+        switch (modules) {
+          case "Dps1":
+            return "Unholy";
+          case "Dps2":
+            return "Arms";
+          case "Healer":
+            return "Holy Paladin";
+          }
+          break;
+    case "Turbo":
+        switch (modules) {
+          case "Dps1":
+            return "Enhance";
+          case "Dps2":
+            return "Arms";
+          case "Healer":
+            return "Mistweaver";
+          }
+          break;          
   }
 };
 

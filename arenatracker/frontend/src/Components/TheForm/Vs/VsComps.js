@@ -72,7 +72,7 @@ const teamCompAuto = [
         modules: [
             {dps1:'Unholy'}, 
             {dps2: 'Arms'},
-            {healer: 'Holy'}]
+            {healer: 'Holy Paladin'}]
     },{
         key: 'Turbo',
         modules: [
