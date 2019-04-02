@@ -40,7 +40,7 @@ class App extends Component {
 
   render() {
     return (
-      //so maybe i should have used a component. <Wallpaper> or something for styling and wrapped everything. or done like a style sheet thing.
+      //ok so maybe i should have used a component. <Wallpaper> or something for styling and wrapped everything. or done like a style sheet thing.
       <div className="background">
         <div className="backgroundLeft">
           <div className="backgroundRight">
@@ -65,21 +65,3 @@ class App extends Component {
 
 export default App;
 
-// <ThemeContext.Provider value={themeChange}>
-// <TheVsForm>
-// <Router>
-//   <>
-//     <Router exact path="/"
-//       render={() => (
-//         <Home
-//         user={user}
-//         handleSubmit={this.handleSubmit}
-//         />
-//         )}
-//         />
-//     <Router exact path="/Login" Component={Login} />
-//     <Router exact path="/Signup" Component={SignUp} />
-//   </>
-// </Router>
-// </TheVsForm>
-// </ThemeContext.Provider>
