@@ -1,6 +1,7 @@
 import React from "react";
 import DropdownMenu, { NestedDropdownMenu } from "react-dd-menu";
 import "./ddMenu.css";
+import { AutoFill } from "../AutoFill";
 
 const classHealerModules = [
   {
@@ -106,21 +107,26 @@ class TheVsForm extends React.Component {
     };
   }
 
-  /*
-TODO:
-1. get autofill functionallity
-	call componentDidUpdate  or whatever it's depricated to
-	pass in parameters		//prevstate, prevprops
-	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)      //leaves undefined 
-*/
-
-  componentDidUpdate(prevState, prevProps) {
-    if (this.props.TeamComp === "Cupid Cleave") {
-      //fucka youa updatea
-      console.log(`prevProps: ${prevProps}`);
-      this.fetchData(this.state.teamCompAuto);
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.selectedTeamComp !== prevProps.selectedTeamComp) {
+      this.autofiller();
     }
   }
+
+  autofill = event => {
+    const {
+      teamCompAuto: { key, modules }
+    } = event;
+    const { dps1, dps2, healer } = this.state;
+    event.preventDefault();
+    this.setState({ [key]: modules });
+  };
+
+  autofiller = () => {
+    const autofiller = AutoFill(this.props.selectedTeamComp, this.props.name);
+    console.log(autofiller);
+    this.setState({ character: autofiller });
+  };
 
   toggle = () => {
     this.setState({ isMenuOpen: !this.state.isMenuOpen });
@@ -139,15 +145,13 @@ TODO:
 
   render() {
     const { name } = this.props;
-    //const { dmg, healer } = this.state;
     const { character } = this.state;
-
     const menuOptions2 = {
       isOpen: this.state.isMenuOpen,
       close: this.close,
       toggle: (
         <button type="button" onClick={this.toggle}>
-          {character ? character : name}
+          {name === "Dps1" ? "Dmg": name === "Dps2" ? "Dmg": name === "Healer" ? "Healer" : name}
         </button>
       ),
       align: "right"

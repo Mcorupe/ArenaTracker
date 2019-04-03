@@ -144,7 +144,7 @@ const teamCompAuto = [
   }
 ];
 
-class TheVsForm extends React.PureComponent {
+class TheVsForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -152,17 +152,12 @@ class TheVsForm extends React.PureComponent {
       teamCompAuto
     };
   }
-
-  /*
-TODO:
-1. [] get autofill functionallity
-	call componentDidUpdate  or whatever it's depricated to
-	pass in parameters		//prevstate, prevprops
-	if (this.props.selectedTeamComp === cupicCleave && this.props.name === dps1)      //leaves undefined 
-
-2. [X]set limits on healer selections
-
-*/
+  
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.selectedTeamComp !== prevProps.selectedTeamComp) {
+      this.autofiller();
+    }
+  }
 
   autofill = event => {
     const {
@@ -173,32 +168,11 @@ TODO:
     this.setState({ [key]: modules });
   };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    //console.log(prevState, prevProps);
-    if (this.props.selectedteamComp !== nextProps.selectedteamComp) {
-      console.log(this.props, nextProps, "the if");
-      return true;
-    } else if (this.props.selectedteamComp === nextProps.selectedteamComp) {
-      console.log("WE'RE IN THE ELSE-IF MAN!!!");
-      this.autofiller();
-      return false;
-    } else {
-      console.log("In the ELSE");
-      this.autofiller();
-      return true;
-      // console.log(`prevProps: ${prevProps}`)
-      // this.fetchData(this.state.teamComp === "Cupid Cleave"
-      // || this.props.modules === 'Retribution'
-      // && this.props.modules === 'Survival'
-      // && this.props.modules === 'Discipline');
-    }
-  }
   autofiller = () => {
-    const autofiller = AutoFill(this.props.selectedteamComp, this.props.name);
+    const autofiller = AutoFill(this.props.selectedTeamComp, this.props.name);
     console.log(autofiller);
     this.setState({ character: autofiller });
   };
-  //tell it state has been updated.... its looping. put a counter and cap it?
 
   toggle = () => {
     this.setState({ isMenuOpen: !this.state.isMenuOpen });
@@ -223,8 +197,7 @@ TODO:
       close: this.close,
       toggle: (
         <button type="button" onClick={this.toggle}>
-          {/* {character ? character : name} */}
-          {name === "Dps1" ? "Dmg" : name === "Dps2" ? "Dmg" : name}
+          {name === "Dps1" ? "Dmg": name === "Dps2" ? "Dmg": name === "Healer" ? "Healer" : name}
         </button>
       ),
       align: "right",
